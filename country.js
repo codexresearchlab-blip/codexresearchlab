@@ -1,0 +1,73 @@
+/* Codex Research - selección de país (US / PA).
+   Persiste en localStorage; al cambiar, notifica para que carrito y vistas
+   recalculen envío, umbrales y métodos de pago.
+   API: window.REACountry.get() | .code() | .config() | .set(code) */
+(function () {
+  const KEY = 'rea-country';
+  const { COUNTRIES } = window.REA;
+
+  function get() {
+    const c = localStorage.getItem(KEY);
+    return COUNTRIES[c] ? c : null;
+  }
+
+  // Adivina el país sin preguntar: zona horaria primero (es la señal más fiable
+  // en el navegador) y el idioma como desempate. Todo lo que no sea claramente
+  // EE.UU. cae en Panamá, que es el mercado base.
+  const US_TZ = /^America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Detroit|Anchorage|Boise|Indiana|Kentucky|North_Dakota|Juneau|Sitka|Nome|Adak|Menominee)/;
+  function detect() {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (tz === 'America/Panama') return 'PA';
+      if (US_TZ.test(tz) || tz === 'Pacific/Honolulu') return 'US';
+      // Fuera de esas zonas, el idioma decide: en-US → US, el resto → PA.
+      const lang = (navigator.language || '').toLowerCase();
+      if (lang === 'en-us') return 'US';
+    } catch (e) { /* Intl puede fallar en navegadores viejos */ }
+    return 'PA';
+  }
+
+  // Si aún no eligió, se usa el país detectado (no se guarda: elegirlo sigue
+  // siendo del visitante, y guardarlo haría creer al resto del sitio que ya lo hizo).
+  function code() { return get() || detect(); }
+  function config() { return COUNTRIES[code()]; }
+
+  function set(c) {
+    if (!COUNTRIES[c]) return;
+    localStorage.setItem(KEY, c);
+    window.dispatchEvent(new CustomEvent('rea-country-change'));
+    // El envío/umbral cambian: fuerza recálculo de drawer y página de carrito
+    window.dispatchEvent(new CustomEvent('rea-cart-change'));
+  }
+
+  /* Las existencias dependen de la bodega, así que el país no solo cambia el
+     envío: cambia lo que se puede comprar. Se aplica aquí porque data.js se
+     carga antes que este archivo y todavía no sabe el país. */
+  function syncStock() {
+    if (window.REA && typeof window.REA.applyStock === 'function') window.REA.applyStock(code());
+  }
+  syncStock();
+  // Va antes que los listeners de las vistas (este archivo se carga primero),
+  // así que cuando ellas repintan, el stock ya está actualizado.
+  window.addEventListener('rea-country-change', syncStock);
+
+  /* Existencias de ahora, no las del día en que se publicó el sitio.
+     data.js trae una foto del stock; el servidor sabe lo que queda. Se pide
+     una vez al cargar y, si contesta, se repinta con el evento que las vistas
+     ya escuchan para el cambio de país — el efecto es el mismo: recalcular
+     qué se puede comprar.
+
+     Si falla (sin red, sin conteo, servidor caído) no se hace nada y queda la
+     tabla publicada. Prefiere ofrecer de más a romper la tienda: quien impide
+     cobrar lo agotado es el servidor al crear el pago, no esto. */
+  fetch('https://hooks.codexresearchlab.com/stock.php')
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j) => {
+      if (!j || !j.ok || !window.REA.setStock(j.stock)) return;
+      syncStock();
+      window.dispatchEvent(new CustomEvent('rea-country-change'));
+    })
+    .catch(() => {});
+
+  window.REACountry = { get, code, config, set, detect };
+})();

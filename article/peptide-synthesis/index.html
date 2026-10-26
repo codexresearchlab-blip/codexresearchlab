@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://www.facebook.com https://connect.facebook.net https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com https://capi-automation.s3.us-east-2.amazonaws.com; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://hooks.codexresearchlab.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://bded8a3c6ae-1-1053047382554.us-central1.run.app https://8b-ffbbe167ddcc42afb5f860276d91024e.ecs.us-west-2.on.aws; frame-src https://www.googletagmanager.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.facebook.com; frame-ancestors 'none'">
+  <script>document.documentElement.classList.add('js')</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NJSJWNH9');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-44S7TCGRFM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-44S7TCGRFM');
+  </script>
+  <!-- End Google tag -->
+  <title>Peptide Synthesis: From SPPS to a 99% HPLC Batch</title>
+  <meta name="description" content="How research peptides are made: solid-phase synthesis, cleavage and purification by HPLC, and why the final solid is not pure peptide by mass.">
+  <link rel="canonical" href="https://codexresearchlab.com/article/peptide-synthesis/">
+  <link rel="alternate" hreflang="en" href="https://codexresearchlab.com/article/peptide-synthesis/">
+  <link rel="alternate" hreflang="es" href="https://codexresearchlab.com/es/article/peptide-synthesis/">
+  <link rel="alternate" hreflang="x-default" href="https://codexresearchlab.com/article/peptide-synthesis/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Peptide Synthesis: From SPPS to a 99% HPLC Batch">
+  <meta property="og:description" content="How research peptides are made: solid-phase synthesis, cleavage and purification by HPLC, and why the final solid is not pure peptide by mass.">
+  <meta property="og:url" content="https://codexresearchlab.com/article/peptide-synthesis/">
+  <meta property="og:image" content="https://codexresearchlab.com/assets/blog/peptide-synthesis.jpg">
+  <meta property="og:site_name" content="Codex Research">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Peptide Synthesis: From SPPS to a 99% HPLC Batch">
+  <meta name="twitter:description" content="How research peptides are made: solid-phase synthesis, cleavage and purification by HPLC, and why the final solid is not pure peptide by mass.">
+  <meta name="twitter:image" content="https://codexresearchlab.com/assets/blog/peptide-synthesis.jpg">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1589772189600279');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1589772189600279&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Peptide Synthesis: From SPPS to a 99% HPLC Batch","description":"How research peptides are made: solid-phase synthesis, cleavage and purification by HPLC, and why the final solid is not pure peptide by mass.","image":["https://codexresearchlab.com/assets/blog/peptide-synthesis.jpg"],"inLanguage":"en","datePublished":"2025-07-22","dateModified":"2026-10-18","author":{"@type":"Organization","name":"Codex Research"},"publisher":{"@type":"Organization","name":"Codex Research","logo":{"@type":"ImageObject","url":"https://codexresearchlab.com/assets/logo-horizontal-dark.png"}},"mainEntityOfPage":"https://codexresearchlab.com/article/peptide-synthesis/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://codexresearchlab.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://codexresearchlab.com/blog/"},{"@type":"ListItem","position":3,"name":"Peptide Synthesis: How Peptides Are Made in the Lab","item":"https://codexresearchlab.com/article/peptide-synthesis/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are research peptides made?","acceptedAnswer":{"@type":"Answer","text":"Almost always by solid-phase peptide synthesis. The first residue is anchored to an insoluble resin and the chain is extended one amino acid at a time through repeated cycles of deprotection, washing and coupling. The finished chain is then cleaved from the resin and purified."}},{"@type":"Question","name":"Why is the peptide attached to a resin?","acceptedAnswer":{"@type":"Answer","text":"Because it removes the need to purify after every step. The chain stays on the solid support while reagents and by-products are washed away through a filter, which is what makes the process repeatable and automatable."}},{"@type":"Question","name":"What is the difference between Fmoc and Boc synthesis?","acceptedAnswer":{"@type":"Answer","text":"They differ in how the temporary N-terminal protecting group is removed. Boc uses acid; Fmoc uses a mild base, leaving the acid-labile side-chain protection untouched until the end. That separation of conditions makes Fmoc the more common choice."}},{"@type":"Question","name":"What is a deletion sequence?","acceptedAnswer":{"@type":"Answer","text":"A chain that missed one residue because a coupling step did not go to completion, then continued through the remaining cycles. It is almost identical to the target and differs by a single residue, which makes it the impurity a purity method most has to resolve."}},{"@type":"Question","name":"Why does a synthetic peptide contain trifluoroacetate?","acceptedAnswer":{"@type":"Answer","text":"Trifluoroacetic acid is used to cleave the peptide from the resin and again as an additive during reversed-phase purification. Some of it stays bound to the material, so the peptide is usually isolated as a salt and part of the weighed powder is counterion."}},{"@type":"Question","name":"Why are some peptides harder to synthesise than others?","acceptedAnswer":{"@type":"Answer","text":"Hydrophobic sequences can aggregate on the resin, physically blocking the reactive end so couplings stall. Length also compounds small losses, since every additional cycle is another opportunity for an incomplete step."}}]}</script>
+</head>
+<body data-nav="blog" data-slug="peptide-synthesis" data-has-es="1">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJSJWNH9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div data-header></div>
+
+  <main id="articleMain">
+    <article>
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a> <span>/</span>
+          <a href="blog/">Blog</a> <span>/</span>
+          <span>Peptide Synthesis: How Peptides Are Made in the Lab</span>
+        </nav>
+        <header class="article-head">
+          <span class="blog-tag">Lab Processes · Jul 22, 2025</span>
+          <h1>Peptide Synthesis: How Peptides Are Made in the Lab</h1>
+        </header>
+      </div>
+      <div class="container article-cover-wrap">
+        <figure class="article-figure">
+          <img src="assets/blog/peptide-synthesis.jpg" alt="Solid-phase peptide synthesis on resin beads in a laboratory" width="1415" height="1800">
+          <figcaption>Solid-phase peptide synthesis on resin beads in a laboratory</figcaption>
+        </figure>
+      </div>
+      <div class="container article-layout">
+        <div class="article-body">
+          
+        <p class="lead">A synthetic peptide is built one residue at a time, in a fixed order, with a wash between every step. The method that makes this practical is solid-phase peptide synthesis, and understanding it explains several things that later show up on a certificate of analysis: why the powder contains a counterion, why some sequences cost more than others, and why purity has to be measured rather than assumed.</p>
+
+        <h2>The bond that has to form, over and over</h2>
+        <p>A peptide bond forms when the carboxyl group of one amino acid joins the amino group of the next, releasing water. Left alone the reaction is slow and unselective, so in practice the carboxyl group is chemically activated first, and every group that must not react is blocked with a protecting group. Each cycle of a synthesis is a small controlled version of that problem. For the underlying vocabulary, see our guide to <a href="article/amino-acids-peptides-proteins-difference/">amino acids, peptides and proteins</a>.</p>
+
+        <h2>Why anchoring the chain to a bead changed everything</h2>
+        <p>In solution, every step of a synthesis ends with a purification, because the product has to be separated from everything else in the flask. Attaching the growing chain to an insoluble resin removes that problem. The peptide stays on the bead, and reagents and by-products are washed away through a filter. The idea was introduced in 1963 and it is the reason peptide synthesis can be automated at all. <a class="cite" href="https://doi.org/10.1021/ja00897a025" target="_blank" rel="noopener nofollow">(Reference: Merrifield, 1963)</a> <a class="cite" href="https://doi.org/10.1002/anie.198507993" target="_blank" rel="noopener nofollow">(Reference: Merrifield, 1985)</a></p>
+
+
+        <h2>The resin decides how the chain ends</h2>
+        <p>The first residue is not attached to the bead directly but through a linker, and the linker chemistry determines what the C-terminus looks like once the peptide is cut free. One linker releases a free carboxylic acid; another releases an amide. That is not a detail of manufacturing trivia: the two forms differ in mass by about one dalton and they are different compounds, so a specification that says the C-terminus is amidated is describing something a mass measurement can confirm or contradict.</p>
+        <p>The linker also sets how harsh the cleavage has to be. Some are designed to release the peptide under mild conditions, which is useful when the sequence carries groups that would not survive a strong acid.</p>
+
+        <h2>The cycle</h2>
+        <p>Synthesis runs from the C-terminus toward the N-terminus, which is the opposite direction to how a ribosome builds a protein. Each residue added repeats the same four steps:</p>
+        <ol>
+          <li><b>Deprotection.</b> The temporary protecting group on the chain's free end is removed, exposing an amine ready to react.</li>
+          <li><b>Washing.</b> Reagents and cleaved protecting groups are flushed out.</li>
+          <li><b>Coupling.</b> The next amino acid, activated at its carboxyl group, forms the new bond.</li>
+          <li><b>Washing again.</b> Excess reagent leaves before the next cycle starts.</li>
+        </ol>
+        <p>A twenty-residue peptide is that loop run twenty times. Nothing is purified in between.</p>
+
+        <h2>Fmoc and Boc</h2>
+        <p>Two protecting-group strategies dominate, named after the group that guards the chain's N-terminus between cycles. Boc chemistry removes it with acid. Fmoc chemistry removes it with a mild base, which means the side-chain protecting groups, removed later with acid, are untouched during the synthesis. That separation of conditions is what makes Fmoc the common choice today. <a class="cite" href="https://doi.org/10.1021/jo00795a005" target="_blank" rel="noopener nofollow">(Reference: Carpino &amp; Han, 1972)</a> <a class="cite" href="https://doi.org/10.1093/oso/9780199637256.001.0001" target="_blank" rel="noopener nofollow">(Reference: Chan &amp; White, 1999)</a></p>
+
+        <h2>Coupling reagents and the cost of an incomplete step</h2>
+        <p>The reagent that activates each amino acid decides how completely the coupling goes. This matters more than it sounds. If a coupling is 99 percent complete, one chain in a hundred is left one residue short, and that shortened chain continues through every remaining cycle. The result is a deletion sequence: a molecule almost identical to the target, differing by one residue. Better activating reagents exist precisely to push each step closer to completion. <a class="cite" href="https://doi.org/10.1021/ja00063a082" target="_blank" rel="noopener nofollow">(Reference: Carpino, 1993)</a></p>
+        <p>Those deletion sequences are the impurities a purity method has to resolve, and they are the reason a small peak sitting very close to the main one in a chromatogram is worth looking at.</p>
+
+        <h2>Checking a step before moving on</h2>
+        <p>Because nothing is purified between cycles, a failed coupling is best caught immediately. A simple colour test for free amine groups on the resin has been used for this since 1970: beads that still carry unreacted amines change colour, indicating the coupling did not go to completion. <a class="cite" href="https://doi.org/10.1016/0003-2697(70)90146-6" target="_blank" rel="noopener nofollow">(Reference: Kaiser et al., 1970)</a></p>
+
+        <h2>Cleavage, and where the counterion comes from</h2>
+        <p>When the sequence is complete, the peptide is cut from the resin and the side-chain protecting groups are removed, usually in one acidic step with trifluoroacetic acid and a mixture of scavengers that mop up the reactive fragments released along the way. This is the first place trifluoroacetate enters the picture. It appears again during <a href="article/high-performance-liquid-chromatography-hplc/">reversed-phase purification</a>, and some of it stays with the material, which is why a peptide is typically isolated as a salt and why part of the weighed powder is counterion rather than peptide.</p>
+
+        <h2>Sequences that fight back</h2>
+        <p>Not every sequence behaves. Chains rich in hydrophobic residues can aggregate on the resin, folding against themselves so that the reactive end is physically blocked and couplings stall. Long syntheses compound the problem, since every extra cycle is another chance for a small loss. Standard procedures and the modifications used for difficult sequences are well documented. <a class="cite" href="https://doi.org/10.1038/nprot.2007.454" target="_blank" rel="noopener nofollow">(Reference: Coin et al., 2007)</a></p>
+        <p>Beyond a certain length, stepwise synthesis stops being practical at all. The usual answer is to build two shorter fragments and join them chemically, an approach that made fully synthetic proteins possible. <a class="cite" href="https://doi.org/10.1126/science.7973629" target="_blank" rel="noopener nofollow">(Reference: Dawson et al., 1994)</a></p>
+
+        <h2>What comes off the resin is not the finished product</h2>
+        <p>Crude material contains the target, deletion sequences, incompletely deprotected chains and the remains of the cleavage cocktail. It is purified, normally by reversed-phase chromatography, and only then is it characterised: a chromatographic run establishes how much of it is the target, and <a href="article/mass-spectrometry-peptide-research/">mass spectrometry</a> establishes that the target is the intended molecule. Those two results, carrying a batch number, are what a <a href="article/how-to-read-a-certificate-of-analysis/">certificate of analysis</a> reports, and what you can check against a <a href="verify/">vial in your hand</a>.</p>
+      
+          <section class="article-product"><h2>Check this against a real batch</h2>
+            <p>Every compound in the <a href="catalog/">catalog</a> lists its formula, molecular weight and CAS number, and every batch we ship has a certificate you can <a href="verify/">look up by number</a>.</p>
+          </section>
+          <section class="article-faq"><h2>Frequently asked questions</h2><div class="faq-item"><h3>How are research peptides made?</h3><p>Almost always by solid-phase peptide synthesis. The first residue is anchored to an insoluble resin and the chain is extended one amino acid at a time through repeated cycles of deprotection, washing and coupling. The finished chain is then cleaved from the resin and purified.</p></div><div class="faq-item"><h3>Why is the peptide attached to a resin?</h3><p>Because it removes the need to purify after every step. The chain stays on the solid support while reagents and by-products are washed away through a filter, which is what makes the process repeatable and automatable.</p></div><div class="faq-item"><h3>What is the difference between Fmoc and Boc synthesis?</h3><p>They differ in how the temporary N-terminal protecting group is removed. Boc uses acid; Fmoc uses a mild base, leaving the acid-labile side-chain protection untouched until the end. That separation of conditions makes Fmoc the more common choice.</p></div><div class="faq-item"><h3>What is a deletion sequence?</h3><p>A chain that missed one residue because a coupling step did not go to completion, then continued through the remaining cycles. It is almost identical to the target and differs by a single residue, which makes it the impurity a purity method most has to resolve.</p></div><div class="faq-item"><h3>Why does a synthetic peptide contain trifluoroacetate?</h3><p>Trifluoroacetic acid is used to cleave the peptide from the resin and again as an additive during reversed-phase purification. Some of it stays bound to the material, so the peptide is usually isolated as a salt and part of the weighed powder is counterion.</p></div><div class="faq-item"><h3>Why are some peptides harder to synthesise than others?</h3><p>Hydrophobic sequences can aggregate on the resin, physically blocking the reactive end so couplings stall. Length also compounds small losses, since every additional cycle is another opportunity for an incomplete step.</p></div></section>
+          <section class="article-refs"><h2>References</h2><ul><li><a href="https://doi.org/10.1021/ja00897a025" target="_blank" rel="noopener nofollow">Merrifield, R.B. (1963). Solid Phase Peptide Synthesis. I. The Synthesis of a Tetrapeptide. Journal of the American Chemical Society, 85(14), 2149-2154.</a></li><li><a href="https://doi.org/10.1002/anie.198507993" target="_blank" rel="noopener nofollow">Merrifield, R.B. (1985). Solid Phase Synthesis (Nobel Lecture). Angewandte Chemie International Edition, 24(10), 799-810.</a></li><li><a href="https://doi.org/10.1021/jo00795a005" target="_blank" rel="noopener nofollow">Carpino, L.A., &amp;amp; Han, G.Y. (1972). The 9-fluorenylmethoxycarbonyl amino-protecting group. The Journal of Organic Chemistry, 37(22), 3404-3409.</a></li><li><a href="https://doi.org/10.1093/oso/9780199637256.001.0001" target="_blank" rel="noopener nofollow">Chan, W.C., &amp;amp; White, P.D. (1999). Fmoc Solid Phase Peptide Synthesis: A Practical Approach. Oxford University Press.</a></li><li><a href="https://doi.org/10.1021/ja00063a082" target="_blank" rel="noopener nofollow">Carpino, L.A. (1993). 1-Hydroxy-7-azabenzotriazole. An efficient peptide coupling additive. Journal of the American Chemical Society, 115(10), 4397-4398.</a></li><li><a href="https://doi.org/10.1016/0003-2697(70)90146-6" target="_blank" rel="noopener nofollow">Kaiser, E., Colescott, R.L., Bossinger, C.D., &amp;amp; Cook, P.I. (1970). Color test for detection of free terminal amino groups in the solid-phase synthesis of peptides. Analytical Biochemistry, 34(2), 595-598.</a></li><li><a href="https://doi.org/10.1038/nprot.2007.454" target="_blank" rel="noopener nofollow">Coin, I., Beyermann, M., &amp;amp; Bienert, M. (2007). Solid-phase peptide synthesis: from standard procedures to the synthesis of difficult sequences. Nature Protocols, 2(12), 3247-3256.</a></li><li><a href="https://doi.org/10.1126/science.7973629" target="_blank" rel="noopener nofollow">Dawson, P.E., Muir, T.W., Clark-Lewis, I., &amp;amp; Kent, S.B.H. (1994). Synthesis of proteins by native chemical ligation. Science, 266(5186), 776-779.</a></li></ul></section>
+          <section class="article-related"><h2>Related articles</h2><ul><li><a href="article/amino-acids-peptides-proteins-difference/">Amino Acids, Peptides, and Proteins: What Is the Difference?</a></li><li><a href="article/high-performance-liquid-chromatography-hplc/">What Is High Performance Liquid Chromatography (HPLC)?</a></li><li><a href="article/mass-spectrometry-peptide-research/">Mass Spectrometry in Peptide Research</a></li><li><a href="article/cyclic-vs-linear-peptides/">Cyclic vs Linear Peptides</a></li></ul></section>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="data.js"></script>
+  <script src="country.js"></script>
+  <script src="cart.js"></script>
+  <script src="i18n.js"></script>
+  <script src="account.js"></script>
+  <script src="layout.js"></script>
+  <script src="app.js"></script>
+  <script src="article/peptide-synthesis/post.js"></script>
+  <script src="article.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

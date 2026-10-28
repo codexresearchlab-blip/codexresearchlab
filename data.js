@@ -659,12 +659,87 @@ const FICHA_ES = {
            'Cada una tiene su ficha en el catálogo.' },
     ],
   },
+  // El agua no es un péptido: no lleva COA de pureza, así que en vez de «qué revisar
+  // en el certificado» va «qué revisar en el vial». Los datos son los del etiquetado
+  // USP publicado en DailyMed (verificado el 2026-10-27), no los de nuestra etiqueta.
+  // Sin «inyección», reconstitución ni plazos de uso tras abrir: la etiqueta de
+  // referencia no da días y la regla de compliance lo prohíbe.
+  'bac-water-10ml': {
+    rows: [
+      ['Composición', 'Agua estéril con alcohol bencílico al 0,9 % (9 mg/mL)'],
+      ['Conservante', 'Alcohol bencílico. Es bacteriostático: frena el crecimiento bacteriano, no esteriliza'],
+      ['pH de referencia', '5,7 (rango 4,5 a 7,0), según el etiquetado USP'],
+      ['Calidad', 'Estéril y apirógena, grado USP'],
+      ['Envase', 'De uso múltiple, vial sellado de 3 ml o 10 ml'],
+      ['Otros aditivos', 'Ninguno'],
+    ],
+    checkHead: 'Qué revisar en el vial',
+    checkIntro: 'El agua bacteriostática no lleva certificado de pureza como un péptido. Lo que se comprueba ' +
+      'es que el vial sea lo que dice la etiqueta y que llegue intacto:',
+    check: [
+      'La etiqueta dice agua bacteriostática, no agua estéril ni destilada, y su volumen: 3 o 10 ml.',
+      'La tapa y el precinto llegan intactos.',
+      'El líquido es transparente e incoloro, sin partículas ni turbidez.',
+    ],
+    checkMore: 'Qué significa cada dato de la etiqueta, y por qué el pH y el conservante importan, está en ' +
+      '<a href="es/article/bacteriostatic-water-usp-specification/">agua bacteriostática: alcohol bencílico, ' +
+      'pH y la norma USP</a>.',
+    lit: 'El alcohol bencílico es el conservante antimicrobiano más usado en formulaciones de proteínas ' +
+      'de uso múltiple, y su interacción con las moléculas disueltas está estudiada: favorece el desplegamiento parcial ' +
+      'y, con él, la agregación. En una comparación publicada quedó en la mitad del rango, por detrás del ' +
+      'm-cresol y el fenol y por delante del fenoxietanol y el clorobutanol. Por eso el agua presente forma ' +
+      'parte de la condición experimental y no es un fondo neutro.',
+    refs: [
+      ['Bacteriostatic Water for Injection, USP: etiquetado del producto. DailyMed, Biblioteca Nacional de Medicina de EE. UU.',
+        'https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=69485218-9343-952d-e053-2a91aa0ad4e8'],
+      ['Hutchings RL, Singh SM, Cabello-Villegas J, Mallela KMG. Effect of antimicrobial preservatives on partial ' +
+        'protein unfolding and aggregation. Journal of Pharmaceutical Sciences, 2013;102(2):365-376.',
+        'https://pmc.ncbi.nlm.nih.gov/articles/PMC3990441/'],
+      ['Shi M, McHugh KJ. Strategies for overcoming protein and peptide instability in biodegradable drug ' +
+        'delivery systems. Advanced Drug Delivery Reviews, 2023;199:114904.',
+        'https://pmc.ncbi.nlm.nih.gov/articles/PMC10526705/'],
+    ],
+    // Las preguntas que Google muestra en «agua bacteriostatica panama» (gl=pa, 2026-10-27).
+    faq: [
+      { q: '¿Es lo mismo el agua bacteriostática que el agua estéril?',
+        a: 'No. Las dos son estériles, pero el agua estéril no lleva nada añadido y se presenta para un solo ' +
+           'uso. El agua bacteriostática lleva alcohol bencílico al 0,9 %, que frena el crecimiento bacteriano, ' +
+           'y por eso se presenta en envase de uso múltiple.' },
+      { q: '¿Se consigue agua bacteriostática en farmacias?',
+        a: 'No toda el agua de laboratorio es bacteriostática: el agua estéril, la destilada y la bidestilada ' +
+           'no llevan conservante y son otros productos. Compres donde compres, revisa que la etiqueta diga agua ' +
+           'bacteriostática y alcohol bencílico al 0,9 %. En Codex se pide en línea y en Ciudad de Panamá llega ' +
+           'en 1 a 2 horas.' },
+      { q: '¿Cuánto dura el agua bacteriostática?',
+        a: 'La fecha de caducidad impresa vale para el envase cerrado y en las condiciones de su etiqueta. Una ' +
+           'vez abierto, el alcohol bencílico es volátil y el envase pierde conservante con el tiempo, así que se ' +
+           'mantiene cerrado mientras no se usa y se anota la fecha en que se abrió por primera vez.' },
+      { q: '¿Qué diferencia hay entre la de 3 ml y la de 10 ml?',
+        a: 'Solo el volumen. Las dos tienen la misma composición, alcohol bencílico al 0,9 % y grado USP. La de ' +
+           '10 ml sale más barata por mililitro.' },
+    ],
+  },
 };
 
 function fichaExtraEs(p) {
   const f = FICHA_ES[p.slug];
   if (!f) return '';
   const n = nameEs(p);
+  // El agua: especificación + revisión del vial, sin certificado ni lote.
+  if (f.check) {
+    const pres = PRODUCTS.filter((x) => x.name === p.name);
+    return `<h2>Especificación de ${n.toLowerCase()}</h2>
+<dl class="pd-specs pd-tech">${f.rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+<h2>${f.checkHead}</h2>
+<p>${f.checkIntro}</p>
+<ol>${f.check.map((c) => `<li>${c}</li>`).join('')}</ol>
+<p>${f.checkMore}</p>
+<h2>Presentaciones de ${n.toLowerCase()} en Panamá</h2>
+<ul>${pres.map((x) => `<li><a href="es/product/${x.slug}/">${n} ${x.mg}</a>: ${x.sizes.map((z) => `${SIZE_ES[z.label] || z.label} $${z.price.toFixed(2)}`).join(', ')}${x.outOfStock ? '. Agotado por ahora' : ''}.</li>`).join('')}</ul>
+<h2>El conservante en la literatura científica</h2>
+<p>${f.lit}</p>
+<ol class="pd-refs">${f.refs.map(([t, u]) => `<li>${t} <a href="${u}" rel="nofollow noopener" target="_blank">Ver publicación</a></li>`).join('')}</ol>`;
+  }
   const row = ([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`;
   const rows = [
     ...(altNamesEs(p).length ? [['También como', altNamesEs(p).join(', ')]] : []),
@@ -790,6 +865,7 @@ function productFaqEs(p) {
       { q: `¿${The} es para uso humano?`,
         a: `No. ${The} se vende como diluyente de laboratorio para investigación y desarrollo. No es para ` +
            'uso humano ni animal.' },
+      ...((FICHA_ES[p.slug] && FICHA_ES[p.slug].faq) || []),
       who,
     ];
   }

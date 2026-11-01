@@ -6,7 +6,7 @@
 > the United States. Orders are placed on the site and paid with crypto (USDC/USDT),
 > Zelle (United States) or Yappy (Panama); Zelle and Yappy are confirmed by hand before shipping.
 
-Last updated: 2026-10-27. Machine-readable pricing: https://codexresearchlab.com/pricing.md
+Last updated: 2026-11-01. Machine-readable pricing: https://codexresearchlab.com/pricing.md
 
 All products are sold strictly for laboratory research and development. They are not for
 human or animal consumption and are not intended to diagnose, treat, cure or prevent any
@@ -44,8 +44,8 @@ A dual GIP and GLP-1 receptor agonist studied in models of metabolic signaling, 
 
 - URL: https://codexresearchlab.com/product/retatrutide/
 - Strength: 10 mg per vial
-- Molecular formula: C228H350N48O66
-- Molecular weight: 4894.58 g/mol
+- Molecular formula: C221H342N46O68
+- Molecular weight: 4731.4 g/mol
 - Research areas: GIP signaling, GLP-1 signaling, Glucagon signaling, Metabolism
 - Single vial: $150.00 USD
 - Pack · 3 vials: $414.00 USD
@@ -62,8 +62,8 @@ A triple GIP / GLP-1 / glucagon receptor agonist studied in models of metabolic 
 
 - URL: https://codexresearchlab.com/product/retatrutide-20mg/
 - Strength: 20 mg per vial
-- Molecular formula: C228H350N48O66
-- Molecular weight: 4894.58 g/mol
+- Molecular formula: C221H342N46O68
+- Molecular weight: 4731.4 g/mol
 - Research areas: GIP signaling, GLP-1 signaling, Glucagon signaling, Metabolism
 - Single vial: $194.00 USD
 - Pack · 3 vials: $535.44 USD
@@ -80,8 +80,8 @@ A triple GIP / GLP-1 / glucagon receptor agonist studied in models of metabolic 
 
 - URL: https://codexresearchlab.com/product/retatrutide-30mg/
 - Strength: 30 mg per vial
-- Molecular formula: C228H350N48O66
-- Molecular weight: 4894.58 g/mol
+- Molecular formula: C221H342N46O68
+- Molecular weight: 4731.4 g/mol
 - Research areas: GIP signaling, GLP-1 signaling, Glucagon signaling, Metabolism
 - Single vial: $214.00 USD
 - Pack · 3 vials: $590.64 USD
@@ -121,7 +121,7 @@ BPC-157 is a pentadecapeptide derived from a protective protein found in gastric
 - CAS number: 1627580-64-6
 - Molecular formula: C101H152N28O22S2
 - Molecular weight: 2174.6 g/mol
-- PubChem: https://pubchem.ncbi.nlm.nih.gov/compound/85718457
+- PubChem: https://pubchem.ncbi.nlm.nih.gov/compound/146675088
 - Research areas: Metabolic homeostasis, Mitochondrial function, Cell signaling
 - Single vial: $85.00 USD
 - Pack · 3 vials: $234.60 USD

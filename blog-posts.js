@@ -3771,7 +3771,7 @@
         <p>Both are long peptides, which matters for the purity figure: the longer the <a href="article/peptide-synthesis/">synthesis</a>, the more chances for a coupling step not to finish, and deletion sequences differ from the target by a single residue and sit close to the main peak.</p>
 
         <h2>Mass, and why the figures look so close</h2>
-        <p>Tirzepatide is 4813.45 g/mol and retatrutide 4894.58, a difference of about 81 units on molecules of nearly five thousand. On that scale an identity check cannot rest on a rounded number: two long peptides can differ by one residue and still look alike to one decimal place.</p>
+        <p>Tirzepatide is 4813.45 g/mol and retatrutide 4731.4, a difference of about 82 units on molecules of nearly five thousand. On that scale an identity check cannot rest on a rounded number: two long peptides can differ by one residue and still look alike to one decimal place.</p>
         <p>This is where the distinction between average and monoisotopic mass stops being pedantry. A mass spectrometer reports the monoisotopic value for the first peak of the isotope cluster, while a catalogue quotes the average, and on molecules this large the two differ by several units. Comparing one against the other is a reliable way to conclude that a correct batch is wrong. Our <a href="tools/peptide-molecular-weight/">molecular weight calculator</a> returns both, and our note on <a href="article/molecular-weight-of-peptides/">average versus monoisotopic mass</a> explains the gap.</p>
 
         <h2>Storage is the same problem for both</h2>

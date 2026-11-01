@@ -2914,7 +2914,7 @@
         <p>Conviene ser claro con esta parte. Que un compuesto sea más reciente que su papelería es normal. Que un proveedor lo tome como motivo para enseñarte menos, no.</p>
 
         <h2>Masa, y por qué las cifras se parecen tanto</h2>
-        <p>La tirzepatida son 4813,45 g/mol y la retatrutida 4894,58, una diferencia de unas 81 unidades en moléculas de casi cinco mil. A esa escala una comprobación de identidad no puede descansar en un número redondeado: dos péptidos largos pueden diferenciarse en un residuo y seguir pareciéndose a un decimal.</p>
+        <p>La tirzepatida son 4813,45 g/mol y la retatrutida 4731,4, una diferencia de unas 82 unidades en moléculas de casi cinco mil. A esa escala una comprobación de identidad no puede descansar en un número redondeado: dos péptidos largos pueden diferenciarse en un residuo y seguir pareciéndose a un decimal.</p>
         <p>Aquí es donde la distinción entre masa media y monoisotópica deja de ser pedantería. Un espectrómetro informa el valor monoisotópico del primer pico del grupo isotópico, mientras que un catálogo da el medio, y en moléculas de este tamaño se diferencian en varias unidades. Comparar uno contra el otro es una forma fiable de concluir que un lote correcto está mal. Nuestra <a href="tools/peptide-molecular-weight/">calculadora de peso molecular</a> devuelve las dos, y nuestra nota sobre <a href="article/molecular-weight-of-peptides/">masa media frente a monoisotópica</a> explica la distancia.</p>
 
         <h2>La conservación es el mismo problema en las dos</h2>

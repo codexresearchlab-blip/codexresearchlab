@@ -20,7 +20,7 @@ const PRODUCTS = [
   },
   {
     slug: 'retatrutide', name: 'GLP3-R', alias: 'retatrutide', nameEs: 'Retatrutide', altEs: ['Retatrutida', 'GLP3-R'], cas: '', tag: 'Research use only',
-    mg: '10 mg', from: 150, formula: 'C228H350N48O66', weight: '4894.58 g/mol', pubchem: 'N/A',
+    mg: '10 mg', from: 150, formula: 'C221H342N46O68', weight: '4731.4 g/mol', pubchem: 'N/A',
     photo: 'assets/products/retatrutide.jpg',
     photo2: 'assets/products/retatrutide-2.jpg',
     video: 'assets/products/retatrutide.mp4', videoPoster: 'assets/products/retatrutide-video.jpg',
@@ -34,7 +34,7 @@ const PRODUCTS = [
   },
   {
     slug: 'retatrutide-20mg', name: 'GLP3-R', alias: 'retatrutide', nameEs: 'Retatrutide', altEs: ['Retatrutida', 'GLP3-R'], cas: '', tag: 'Research use only',
-    mg: '20 mg', from: 194, formula: 'C228H350N48O66', weight: '4894.58 g/mol', pubchem: 'N/A',
+    mg: '20 mg', from: 194, formula: 'C221H342N46O68', weight: '4731.4 g/mol', pubchem: 'N/A',
     photo: 'assets/products/retatrutide-20mg.jpg', outOfStock: true,
     photo2: 'assets/products/retatrutide-20mg-2.jpg',
     video: 'assets/products/retatrutide-20mg.mp4', videoPoster: 'assets/products/retatrutide-20mg-video.jpg',
@@ -48,7 +48,7 @@ const PRODUCTS = [
   },
   {
     slug: 'retatrutide-30mg', name: 'GLP3-R', alias: 'retatrutide', nameEs: 'Retatrutide', altEs: ['Retatrutida', 'GLP3-R'], cas: '', tag: 'Research use only',
-    mg: '30 mg', from: 214, formula: 'C228H350N48O66', weight: '4894.58 g/mol', pubchem: 'N/A',
+    mg: '30 mg', from: 214, formula: 'C221H342N46O68', weight: '4731.4 g/mol', pubchem: 'N/A',
     photo: 'assets/products/retatrutide-30mg.jpg', outOfStock: true,
     photo2: 'assets/products/retatrutide-30mg-2.jpg',
     video: 'assets/products/retatrutide-30mg.mp4', videoPoster: 'assets/products/retatrutide-30mg-video.jpg',
@@ -76,7 +76,7 @@ const PRODUCTS = [
   },
   {
     slug: 'mots-c', name: 'MOTS-c', cas: '1627580-64-6', tag: 'CAS # 1627580-64-6',
-    mg: '10 mg', from: 85, formula: 'C101H152N28O22S2', weight: '2174.6 g/mol', pubchem: '85718457',
+    mg: '10 mg', from: 85, formula: 'C101H152N28O22S2', weight: '2174.6 g/mol', pubchem: '146675088',
     photo: 'assets/products/mots-c.jpg',
     photo2: 'assets/products/mots-c-2.jpg',
     video: 'assets/products/mots-c.mp4', videoPoster: 'assets/products/mots-c-video.jpg',
@@ -659,6 +659,445 @@ const FICHA_ES = {
            'Cada una tiene su ficha en el catálogo.' },
     ],
   },
+  // Los 13 compuestos restantes (2026-11-01). Fórmulas y masas de PubChem o calculadas desde la
+  // secuencia; referencias comprobadas en Crossref/PubMed. Fuera las de título con promesa clínica.
+  'tirzepatide': {
+    rows: [
+      ['Secuencia', 'Y-Aib-EGTFTSDYSI-Aib-LDKIAQ-K*-AFVQWLIAGGPSSGAPPPS-NH2 (K* = Lys20 acilada)'],
+      ['Longitud', '39 aminoácidos, C-terminal amidado'],
+      ['Modificaciones', 'Aib (ácido α-aminoisobutírico) en las posiciones 2 y 13; Lys20 unida a un ácido eicosanodioico (C20) a través de γ-Glu y dos unidades AEEA (ácido 8-amino-3,6-dioxaoctanoico)'],
+      ['Masa monoisotópica', '4810,52'],
+      ['Código de desarrollo', 'LY3298176'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'Tirzepatida pesa unos 4.813 g/mol, así que la espectrometría de masas da iones con varias cargas ' +
+      '(por ejemplo [M+3H]3+ cerca de 1.605 y [M+4H]4+ cerca de 1.204) que se convierten en una masa ' +
+      'reconstruida, cerca de 4.810,5 (monoisotópica) o 4.813,5 (promedio). El certificado debe decir cuál ' +
+      'reporta. Una impureza propia de este compuesto es el péptido sin la cadena lipídica o con ella ' +
+      'incompleta: pesa unos 743 menos si le falta entera, y por eso conviene que la pureza por HPLC venga ' +
+      'junto a la masa.',
+    lit: 'Tirzepatida se desarrolló en Eli Lilly con el código LY3298176, como un péptido modificado con ' +
+      'un ácido graso que activa los receptores de GIP y de GLP-1. En 2020, Willard y colaboradores ' +
+      'estudiaron su señalización in vitro, en líneas celulares que expresan esos receptores: en el receptor de ' +
+      'GIP se comportó como la GIP natural, y en el de GLP-1 favoreció la producción de AMPc frente al ' +
+      'reclutamiento de β-arrestina.',
+    refs: [
+      ['Willard FS, Douros JD, Gabe MB, et al. Tirzepatide is an imbalanced and biased dual GIP and GLP-1 receptor agonist. JCI Insight. 2020;5(17):e140532.', 'https://doi.org/10.1172/jci.insight.140532'],
+    ],
+    faq: [
+      { q: '¿GLP2-T y tirzepatida son lo mismo?',
+        a: 'Sí. GLP2-T es el nombre con que el catálogo vende la tirzepatida (código de desarrollo LY3298176). ' +
+           'Su fórmula es C225H348N48O68 y su peso molecular, unos 4.813 g/mol.' },
+      { q: '¿Qué diferencia hay entre tirzepatida y retatrutide?',
+        a: 'Las dos son péptidos de 39 aminoácidos con un ácido graso C20, pero la tirzepatida activa dos ' +
+           'receptores (GIP y GLP-1) y retatrutide tres (GIP, GLP-1 y glucagón). La secuencia cambia en varias ' +
+           'posiciones, retatrutide lleva una unidad AEEA en vez de dos y su masa es menor, unos 4.731 g/mol. ' +
+           'Cada uno tiene su ficha y su lote en el catálogo.' },
+    ],
+  },
+  'retatrutide': {
+    rows: [
+      ['Secuencia', 'Y-Aib-QGTFTSDYSI-αMeL-LDK-K*-AQ-Aib-AFIEYLLEGGPSSGAPPPS-NH2 (K* = Lys17 acilada)'],
+      ['Longitud', '39 aminoácidos, C-terminal amidado'],
+      ['Modificaciones', 'Aib en las posiciones 2 y 20, α-metil-L-leucina en la 13; Lys17 unida a un ácido eicosanodioico (C20) a través de γ-Glu y una unidad AEEA'],
+      ['Masa monoisotópica', '4728,47'],
+      ['Código de desarrollo', 'LY3437943'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'Retatrutide pesa unos 4.731 g/mol: la espectrometría de masas da iones con varias cargas ' +
+      '(por ejemplo [M+3H]3+ cerca de 1.578 y [M+4H]4+ cerca de 1.184) y una masa reconstruida cerca de ' +
+      '4.728,5 (monoisotópica) o 4.731,4 (promedio). Si un certificado reporta una masa cercana a 4.813, ' +
+      'esa es la de la tirzepatida, no la de retatrutide. Las impurezas típicas son secuencias con un ' +
+      'aminoácido de menos y el péptido sin la cadena lipídica, que pesa unos 598 menos, así que la pureza ' +
+      'por HPLC importa tanto como la masa.',
+    // Sin `lit` ni `refs` a propósito: la única referencia verificada (Coskun 2022) lleva
+    // «weight loss» en el título, y en una ficha que vende GLP3-R eso insinúa uso humano.
+    lit: '',
+    refs: [],
+    faq: [
+      { q: '¿GLP3-R y retatrutide son lo mismo?',
+        a: 'Sí. GLP3-R es el nombre con que el catálogo vende retatrutide (código de desarrollo LY3437943). ' +
+           'Su fórmula es C221H342N46O68 y su peso molecular, unos 4.731 g/mol.' },
+      { q: '¿Qué secuencia tiene retatrutide?',
+        a: 'Y-Aib-QGTFTSDYSI-αMeL-LDKKAQ-Aib-AFIEYLLEGGPSSGAPPPS-NH2: 39 aminoácidos, tres de ellos no ' +
+           'estándar (dos Aib y una α-metil-leucina), con la lisina 17 unida a un ácido graso C20 y el extremo ' +
+           'C-terminal amidado.' },
+      { q: '¿Qué diferencia hay entre GLP3-R de 10, 20 y 30 mg?',
+        a: 'Solo la cantidad por vial. Es el mismo compuesto, con la misma fórmula y el mismo análisis por lote.' },
+    ],
+  },
+  'cjc-1295-no-dac': {
+    rows: [
+      ['Secuencia', 'Y-D-Ala-DAIFTQSYRKVLAQLSARKLLQDILSR-NH2'],
+      ['Longitud', '29 aminoácidos (GRF humano 1-29), C-terminal amidado'],
+      ['Sustituciones', 'D-Ala2, Gln8, Ala15 y Leu27 respecto al GRF natural (Ala2, Asn8, Gly15, Met27)'],
+      ['Masa monoisotópica', '3365,89'],
+      ['Otros nombres', 'Mod GRF 1-29, GRF(1-29) tetrasustituido'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En CJC-1295 sin DAC la espectrometría de masas suele mostrar iones con varias cargas: [M+3H]3+ ' +
+      'cerca de 1.123,0 y [M+4H]4+ cerca de 842,5, que corresponden a una masa monoisotópica de 3.365,89 ' +
+      '(3.367,9 g/mol en promedio). Si la masa sale cerca de 3.647, el vial contiene la versión con DAC, ' +
+      'que lleva una lisina extra con un grupo maleimida. La D-alanina de la posición 2 tiene la misma masa ' +
+      'que la L-alanina, así que solo la cromatografía detecta ese error de quiralidad.',
+    lit: 'El nombre CJC-1295 viene de ConjuChem, en Montreal. En 2005, Jetté y colaboradores describieron ' +
+      'CJC-1295 como una forma con cuatro sustituciones del GRF humano 1-29 a la que se añade, en el extremo ' +
+      'C-terminal, una lisina con un grupo maleimidopropionamida que se une a la albúmina. CJC-1295 sin DAC ' +
+      'es ese mismo péptido de 29 aminoácidos sin la lisina añadida. En ese trabajo los conjugados se ' +
+      'estudiaron frente a la dipeptidil peptidasa IV in vitro, en células de hipófisis anterior de rata en ' +
+      'cultivo y en rata.',
+    refs: [
+      ['Jetté L, Léger R, Thibaudeau K, et al. Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog. Endocrinology. 2005;146(7):3052-8.', 'https://doi.org/10.1210/en.2004-1286'],
+    ],
+    faq: [
+      { q: '¿CJC-1295 sin DAC y con DAC son lo mismo?',
+        a: 'No. Comparten los 29 aminoácidos con cuatro sustituciones, pero la versión con DAC añade una lisina ' +
+           'con un grupo maleimidopropionamida en el extremo C-terminal. Por eso su fórmula (C165H269N47O46) y ' +
+           'su peso, unos 3.647 g/mol, son mayores que los de la versión sin DAC (C152H252N44O42, 3.367,9 g/mol).' },
+      { q: '¿CJC-1295 sin DAC y Mod GRF 1-29 son lo mismo?',
+        a: 'Sí. Son dos nombres del mismo péptido: los primeros 29 aminoácidos del GRF humano con D-Ala2, ' +
+           'Gln8, Ala15 y Leu27, y el extremo C-terminal amidado.' },
+    ],
+  },
+  'igf-1-lr3': {
+    rows: [
+      ['Secuencia', 'MFPAMPLSSLFVN-GPRTLCGAELVDALQFVCGDRGFYFNKPTGYGSSSRRAPQTGIVDECCFRSCDLRRLEMYCAPLKPAKSA'],
+      ['Longitud', '83 aminoácidos: extensión N-terminal de 13 más los 70 de la IGF-1 humana'],
+      ['Modificaciones', 'Arg en lugar de Glu en la posición 3 de la IGF-1; tres puentes disulfuro (Cys6-Cys48, Cys18-Cys61 y Cys47-Cys52 en la numeración de la IGF-1)'],
+      ['Masa monoisotópica', '9105,35'],
+      ['Otros nombres', 'Long R3 IGF-I, Long [Arg3]-IGF-I'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'IGF-1 LR3 es una proteína de unos 9.111 g/mol (C400H619N111O115S9 con los tres puentes disulfuro ' +
+      'cerrados), así que la espectrometría de masas da iones con muchas cargas y una masa reconstruida cerca ' +
+      'de 9.111,5 en promedio. Una masa 6 unidades mayor indica que los puentes disulfuro no están cerrados. ' +
+      'Tiene tres metioninas, y la oxidación de una de ellas suma 16. Las proteínas de este tamaño se suelen producir ' +
+      'en bacterias y plegar después, así que el certificado debería mostrar también la pureza por HPLC, que separa las formas mal plegadas ' +
+      'de la misma masa.',
+    lit: 'IGF-1 LR3 salió del trabajo de Francis y colaboradores en el CSIRO de Adelaida (Australia), publicado ' +
+      'en 1992. Expresaron en Escherichia coli análogos de la IGF-1 unidos a los primeros 11 aminoácidos de la ' +
+      'hormona de crecimiento porcina con metionina inicial, seguidos de Val-Asn. Uno de ellos, Long [Arg3]-IGF-I, ' +
+      'cambia el Glu3 de la IGF-1 humana por arginina. En mioblastos L6 de rata, estos análogos fueron más ' +
+      'potentes que la IGF-1 natural para estimular la síntesis de proteínas y de ADN.',
+    refs: [
+      ['Francis GL, Ross M, Ballard FJ, et al. Novel recombinant fusion protein analogues of insulin-like growth factor (IGF)-I indicate the relative importance of IGF-binding protein and receptor binding for enhanced biological potency. J Mol Endocrinol. 1992;8(3):213-23.', 'https://doi.org/10.1677/jme.0.0080213'],
+    ],
+    faq: [
+      { q: '¿IGF-1 LR3 e IGF-1 son lo mismo?',
+        a: 'No. IGF-1 LR3 conserva los 70 aminoácidos de la IGF-1 humana con un cambio, arginina en lugar de ' +
+           'ácido glutámico en la posición 3, y añade una extensión de 13 aminoácidos en el extremo N-terminal. ' +
+           'Pesa unos 9.111 g/mol frente a unos 7.649 de la IGF-1.' },
+      { q: '¿Qué significa «LR3» en IGF-1 LR3?',
+        a: 'La L viene de «Long», por la extensión N-terminal de 13 aminoácidos, y R3 indica la arginina en la ' +
+           'posición 3 de la secuencia de la IGF-1.' },
+    ],
+  },
+  'bpc-157': {
+    rows: [
+      ['Secuencia', 'Gli-Glu-Pro-Pro-Pro-Gli-Lis-Pro-Ala-Asp-Asp-Ala-Gli-Leu-Val (GEPPPGKPADDAGLV), extremos libres'],
+      ['Longitud', 'Pentadecapéptido, 15 aminoácidos'],
+      ['Fórmula', 'C62H98N16O22, 1419,5 g/mol (PubChem CID 9941957)'],
+      ['Masa monoisotópica', '1418,70'],
+      ['Código de desarrollo / otros nombres', 'PL 14736, PLD-116, bepecina'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En BPC-157 la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 1419,7, o el ion con ' +
+      'dos cargas [M+2H]2+ cerca de 710,4. La secuencia lleva tres prolinas seguidas, y en la síntesis la ' +
+      'impureza típica de ese tramo es la secuencia con una prolina de menos, unos 97 de masa por debajo. ' +
+      'Si el vial se vende como sal (acetato o arginato), el certificado debe decirlo, porque el contraión ' +
+      'cambia el peso del polvo pero no la masa del péptido que mide el espectrómetro.',
+    lit: 'BPC-157 lo describió en 1993 el grupo de Predrag Sikirić, del Departamento de Farmacología de la ' +
+      'Facultad de Medicina de la Universidad de Zagreb. Partieron de una proteína del jugo gástrico de unos ' +
+      '40.000 de masa a la que llamaron BPC, y caracterizaron un fragmento de 15 aminoácidos de esa ' +
+      'proteína, BPC 157. Ese trabajo y los que siguieron del mismo grupo se hicieron en modelos animales de ' +
+      'lesión de tejidos, en varias especies, con la rata como modelo más usado.',
+    refs: [
+      ['Sikirić P, Petek M, Rucman R, Seiwerth S, Grabarević Z, Rotkvić I, et al. A new gastric juice peptide, BPC. An overview of the stomach-stress-organoprotection hypothesis and beneficial effects of BPC. J Physiol Paris. 1993;87(5):313-27.', 'https://doi.org/10.1016/0928-4257(93)90038-u'],
+      ['Sikiric P, Rucman R, Turkovic B, Sever M, Klicek R, Radic B, et al. Novel Cytoprotective Mediator, Stable Gastric Pentadecapeptide BPC 157. Vascular Recruitment and Gastrointestinal Tract Healing. Curr Pharm Des. 2018;24(18):1990-2001.', 'https://doi.org/10.2174/1381612824666180608101119'],
+    ],
+    faq: [
+      { q: '¿Qué secuencia tiene BPC-157?',
+        a: 'GEPPPGKPADDAGLV: quince aminoácidos estándar, todos en forma L, con los extremos libres. Su fórmula ' +
+           'es C62H98N16O22 y su peso molecular, 1419,5 g/mol.' },
+      { q: '¿BPC-157 y BPC son lo mismo?',
+        a: 'No. BPC es la proteína del jugo gástrico, de unos 40.000 de masa, que describió el grupo de Zagreb. ' +
+           'BPC-157 es un fragmento sintético de 15 aminoácidos de esa proteína, y es el que se vende y se analiza.' },
+    ],
+  },
+  'tb-500': {
+    rows: [
+      ['Secuencia', 'Ac-Leu-Lis-Lis-Thr-Glu-Thr-Gln-OH (Ac-LKKTETQ), N-terminal acetilado'],
+      ['Longitud', 'Heptapéptido, residuos 17-23 de la timosina β4'],
+      ['Modificación', 'Grupo acetilo en el extremo N'],
+      ['Masa monoisotópica', '888,49'],
+      ['Otros nombres', 'TB500, fragmento 17-23 de la timosina β4 acetilado (PubChem CID 62707662)'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En TB-500 la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 889,5, o [M+2H]2+ cerca ' +
+      'de 445,3. Un pico cerca de 847,5 indica el heptapéptido sin acetilar, 42 de masa por debajo: la ' +
+      'acetilación no se ve en la secuencia y solo la confirma la masa. Si el certificado da una masa cerca ' +
+      'de 4.963, el vial contiene la timosina β4 completa y no el fragmento, que es otro compuesto.',
+    lit: 'La timosina β4 se secuenció en 1981 en el laboratorio de Allan Goldstein, a partir de timo bovino. En ' +
+      '1991 Safer, Elzinga y Nachmias mostraron que es la misma molécula que el péptido Fx de las plaquetas, ' +
+      'que forma un complejo 1:1 con la actina monomérica e impide su polimerización. En 2003 Philp, Kleinman ' +
+      'y colaboradores, de los NIH, vieron que un motivo de siete aminoácidos de unión a actina bastaba para ' +
+      'la migración de células endoteliales en cultivo y la formación de brotes en aorta de pollo. TB-500 es ' +
+      'ese motivo, LKKTETQ, con el extremo N acetilado.',
+    refs: [
+      ['Low TL, Hu SK, Goldstein AL. Complete amino acid sequence of bovine thymosin beta 4: a thymic hormone that induces terminal deoxynucleotidyl transferase activity in thymocyte populations. Proc Natl Acad Sci U S A. 1981;78(2):1162-6.', 'https://doi.org/10.1073/pnas.78.2.1162'],
+      ['Safer D, Elzinga M, Nachmias VT. Thymosin beta 4 and Fx, an actin-sequestering peptide, are indistinguishable. J Biol Chem. 1991;266(7):4029-32.', 'https://pubmed.ncbi.nlm.nih.gov/1999398/'],
+      ['Philp D, Huff T, Gho YS, Hannappel E, Kleinman HK. The actin binding site on thymosin beta4 promotes angiogenesis. FASEB J. 2003;17(14):2103-5.', 'https://doi.org/10.1096/fj.03-0121fje'],
+    ],
+    faq: [
+      { q: '¿TB-500 y timosina beta-4 son lo mismo?',
+        a: 'No. La timosina β4 es una proteína de 43 aminoácidos, acetilada en el extremo N, de fórmula ' +
+           'C212H350N56O78S y unos 4.963 g/mol. TB-500 es el fragmento de siete aminoácidos Ac-LKKTETQ, de ' +
+           'fórmula C38H68N10O14 y unos 889 g/mol. La masa del certificado dice cuál de los dos contiene el vial.' },
+      { q: '¿Qué secuencia tiene TB-500?',
+        a: 'Ac-Leu-Lis-Lis-Thr-Glu-Thr-Gln-OH: siete aminoácidos, los residuos 17 a 23 de la timosina β4, con un ' +
+           'grupo acetilo en el extremo N. Sin ese acetilo la masa baja 42.' },
+    ],
+  },
+  'pt-141': {
+    rows: [
+      ['Secuencia', 'Ac-Nle-ciclo[Asp-His-D-Phe-Arg-Trp-Lis]-OH'],
+      ['Longitud', 'Heptapéptido cíclico, C-terminal en ácido libre'],
+      ['Aminoácidos no estándar', 'Norleucina (Nle) y D-fenilalanina'],
+      ['Ciclación', 'Puente lactama entre la cadena lateral del Asp 2 y la de la Lis 7 (anillo de 23 átomos)'],
+      ['Masa monoisotópica', '1024,52'],
+      ['Otros nombres', 'Bremelanotida (PubChem CID 9941379)'],
+    ],
+    coa: 'En PT-141 la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 1025,5, o [M+2H]2+ cerca ' +
+      'de 513,3. Un pico unos 18 por encima, cerca de 1043,5, es el heptapéptido lineal que no llegó a ' +
+      'ciclarse. Melanotan II tiene el mismo anillo pero termina en amida y pesa casi 1 menos (C50H69N15O9, ' +
+      'ion [M+H]+ cerca de 1024,5), así que la masa solo los separa si el certificado la da con decimales; ' +
+      'la pureza por HPLC tiene que cubrir esa posibilidad.',
+    lit: 'El anillo de PT-141 viene del trabajo de Fahad Al-Obeidi, Mac Hadley y Victor Hruby en la Universidad ' +
+      'de Arizona, publicado en 1989. Diseñaron con dinámica molecular una serie de fragmentos cíclicos de la ' +
+      'α-melanotropina cerrados por un puente lactama entre Asp y Lis, y los ensayaron en piel de rana y de ' +
+      'lagarto. El de 23 átomos fue el más potente de la serie. Uno de esos compuestos, con el extremo C ' +
+      'amidado, es melanotan II; PT-141 es la misma estructura con el extremo C en ácido libre.',
+    refs: [
+      ['Al-Obeidi F, Castrucci AM, Hadley ME, Hruby VJ. Potent and prolonged acting cyclic lactam analogues of alpha-melanotropin: design based on molecular dynamics. J Med Chem. 1989;32(12):2555-61.', 'https://doi.org/10.1021/jm00132a010'],
+    ],
+    faq: [
+      { q: '¿PT-141 y melanotan II son lo mismo?',
+        a: 'No. Comparten el anillo Ac-Nle-ciclo[Asp-His-D-Phe-Arg-Trp-Lis], pero melanotan II termina en ' +
+           'amida (C50H69N15O9, 1024,2 g/mol) y PT-141 en ácido libre (C50H68N14O10, 1025,2 g/mol). Son ' +
+           'compuestos distintos.' },
+      { q: '¿Qué secuencia tiene PT-141?',
+        a: 'Ac-Nle-ciclo[Asp-His-D-Phe-Arg-Trp-Lis]-OH: siete aminoácidos, uno de ellos norleucina y otro en ' +
+           'forma D, con un puente lactama entre el Asp y la Lis que cierra el anillo.' },
+    ],
+  },
+  'kisspeptin': {
+    rows: [
+      ['Secuencia', 'Tyr-Asn-Trp-Asn-Ser-Phe-Gli-Leu-Arg-Phe-NH2 (YNWNSFGLRF-NH2)'],
+      ['Longitud', 'Decapéptido, C-terminal amidado'],
+      ['Origen de la secuencia', 'Residuos 45-54 de la kisspeptina-54 humana (metastina)'],
+      ['Masa monoisotópica', '1301,63'],
+      ['Otros nombres', 'KP-10, metastina 45-54 (PubChem CID 25240297)'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En kisspeptina-10 la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 1302,6, o ' +
+      '[M+2H]2+ cerca de 651,8. El extremo C amidado (el motivo RF-amida) es parte de la identidad: la ' +
+      'versión en ácido libre pesa casi 1 más y la masa solo la distingue si se da con decimales, así que el ' +
+      'certificado debe acompañarla de la pureza por HPLC.',
+    lit: 'El gen KiSS-1 lo describieron en 1996 Lee, Welch y colaboradores como un gen supresor de metástasis ' +
+      'en células de melanoma. En 2001 dos grupos identificaron sus productos como ligandos del receptor ' +
+      'huérfano GPR54: el de Ohtaki, en Takeda, aisló de placenta humana un péptido de 54 aminoácidos con el ' +
+      'extremo C amidado al que llamó metastina, y el de Kotani y Parmentier, en Bruselas, aisló formas de 54, ' +
+      '14 y 13 aminoácidos con el mismo extremo RF-amida y las llamó kisspeptinas. Las caracterizaron en ' +
+      'células CHO que expresaban el receptor y en rata. La kisspeptina-10 es el tramo C-terminal de 10 ' +
+      'aminoácidos que comparten todas esas formas.',
+    refs: [
+      ['Lee JH, Miele ME, Hicks DJ, Phillips KK, Trent JM, Weissman BE, et al. KiSS-1, a novel human malignant melanoma metastasis-suppressor gene. J Natl Cancer Inst. 1996;88(23):1731-7.', 'https://doi.org/10.1093/jnci/88.23.1731'],
+      ['Ohtaki T, Shintani Y, Honda S, Matsumoto H, Hori A, Kanehashi K, et al. Metastasis suppressor gene KiSS-1 encodes peptide ligand of a G-protein-coupled receptor. Nature. 2001;411(6837):613-7.', 'https://doi.org/10.1038/35079135'],
+      ['Kotani M, Detheux M, Vandenbogaerde A, Communi D, Vanderwinden JM, Le Poul E, et al. The metastasis suppressor gene KiSS-1 encodes kisspeptins, the natural ligands of the orphan G protein-coupled receptor GPR54. J Biol Chem. 2001;276(37):34631-6.', 'https://doi.org/10.1074/jbc.M104847200'],
+    ],
+    faq: [
+      { q: '¿Kisspeptina-10 y kisspeptina-54 son lo mismo?',
+        a: 'No. La kisspeptina-54, también llamada metastina, es el péptido de 54 aminoácidos que se aisló de ' +
+           'placenta humana. La kisspeptina-10 son sus últimos 10 aminoácidos (45-54), YNWNSFGLRF-NH2, de ' +
+           'fórmula C63H83N17O14 y 1302,4 g/mol.' },
+      { q: '¿Qué secuencia tiene la kisspeptina-10?',
+        a: 'YNWNSFGLRF-NH2: diez aminoácidos estándar con el extremo C amidado, que es el motivo RF-amida común ' +
+           'a todas las kisspeptinas. Es la secuencia humana, la del CAS 374675-21-5.' },
+    ],
+  },
+  'epithalon': {
+    rows: [
+      ['Secuencia', 'Ala-Glu-Asp-Gli (AEDG), extremos libres'],
+      ['Longitud', 'Tetrapéptido, 4 aminoácidos'],
+      ['Fórmula', 'C14H22N4O9, 390,35 g/mol (PubChem CID 219042)'],
+      ['Masa monoisotópica', '390,14'],
+      ['Otros nombres', 'Epitalón, epithalone, AEDG'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En epitalón la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 391,1. La secuencia ' +
+      'termina en Asp-Gli, el tramo más propenso a formar aspartimida durante la síntesis: esa impureza pesa ' +
+      '18 menos (cerca de 373,1) y, al abrirse, puede dar isoaspartato, que tiene la misma masa que el ' +
+      'péptido correcto. Por eso en un tetrapéptido tan corto la pureza por HPLC dice tanto como la masa.',
+    lit: 'El epitalón salió del Instituto de Biorregulación y Gerontología de San Petersburgo, en el grupo de ' +
+      'Vladimir Khavinson, como tetrapéptido sintético basado en la epitalamina, un extracto de glándula ' +
+      'pineal. En un trabajo de 2003, Khavinson, Bondarev y Butyugov lo añadieron a un cultivo de ' +
+      'fibroblastos fetales humanos sin actividad de telomerasa y describieron expresión de la subunidad ' +
+      'catalítica, actividad de la enzima y alargamiento de los telómeros en esas células.',
+    refs: [
+      ['Khavinson VKh, Bondarev IE, Butyugov AA. Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells. Bull Exp Biol Med. 2003;135(6):590-2.', 'https://doi.org/10.1023/a:1025493705728'],
+    ],
+    faq: [
+      { q: '¿Epitalón y epitalamina son lo mismo?',
+        a: 'No. La epitalamina es un extracto de glándula pineal, una mezcla. El epitalón es un tetrapéptido ' +
+           'sintético de secuencia definida, Ala-Glu-Asp-Gli, con fórmula C14H22N4O9 y 390,35 g/mol.' },
+      { q: '¿Qué secuencia tiene el epitalón?',
+        a: 'Ala-Glu-Asp-Gli (AEDG): cuatro aminoácidos estándar con los extremos libres. Es el mismo compuesto ' +
+           'que se encuentra escrito como Epithalon, Epitalon o Epithalone.' },
+    ],
+  },
+  'mots-c': {
+    rows: [
+      ['Secuencia', 'MRWQEMGYIFYPRKLR (Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg)'],
+      ['Longitud', '16 aminoácidos, extremos libres (H-…-OH)'],
+      ['Origen de la secuencia', 'Marco de lectura corto dentro del gen del ARNr 12S del ADN mitocondrial'],
+      ['Masa monoisotópica', '2173,11'],
+      ['Otros nombres', 'Mitochondrial open reading frame of the 12S rRNA-c (PubChem CID 146675088)'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'MOTS-c pesa unos 2.175 g/mol, así que la espectrometría de masas suele mostrarlo con varias ' +
+      'cargas: [M+2H]2+ cerca de 1087,6 y [M+3H]3+ cerca de 725,4, que corresponden a una masa ' +
+      'monoisotópica de 2173,1 (2174,6 promedio). La secuencia lleva dos metioninas, y la metionina se ' +
+      'oxida con facilidad: un pico 16 unidades más pesado es la impureza típica y la pureza por HPLC debe ' +
+      'separarlo. Como casi todos los péptidos de síntesis, suele entregarse como sal de trifluoroacetato, ' +
+      'y el certificado debe decir si el porcentaje es de pureza o de contenido de péptido.',
+    lit: 'MOTS-c lo describieron en 2015 Changhan Lee, Pinchas Cohen y colaboradores, en la Universidad del ' +
+      'Sur de California, como un péptido de 16 aminoácidos codificado por un marco de lectura corto dentro ' +
+      'del gen del ARNr 12S del ADN mitocondrial. De ahí sale su nombre: mitochondrial open reading frame of ' +
+      'the 12S rRNA-c. En 2018 el laboratorio de Lee describió que, en células sometidas a estrés ' +
+      'metabólico, el péptido pasa al núcleo y regula la expresión de genes nucleares.',
+    refs: [
+      ['Kim KH, Son JM, Benayoun BA, Lee C. The Mitochondrial-Encoded Peptide MOTS-c Translocates to the Nucleus to Regulate Nuclear Gene Expression in Response to Metabolic Stress. Cell Metab. 2018;28(3):516-524.', 'https://doi.org/10.1016/j.cmet.2018.06.008'],
+    ],
+    faq: [
+      { q: '¿MOTS-c se codifica en el ADN nuclear?',
+        a: 'No. Su secuencia está en el ADN mitocondrial, dentro del gen del ARN ribosómico 12S. Por eso se ' +
+           'le llama péptido de origen mitocondrial.' },
+      { q: '¿MOTS-c y humanina son lo mismo?',
+        a: 'No. Los dos son péptidos codificados en el ADN mitocondrial, pero la humanina sale de la región ' +
+           'del ARNr 16S y MOTS-c de la del 12S. Tienen secuencias distintas y MOTS-c tiene 16 aminoácidos.' },
+    ],
+  },
+  'ss-31': {
+    rows: [
+      ['Secuencia', 'D-Arg-Dmt-Lys-Phe-NH2'],
+      ['Longitud', 'Tetrapéptido, C-terminal amidado'],
+      ['Aminoácidos no estándar', 'D-arginina en la posición 1 y Dmt (2′,6′-dimetil-L-tirosina) en la 2'],
+      ['Masa monoisotópica', '639,39'],
+      ['Otros nombres', 'Elamipretida, MTP-131, Bendavia (PubChem CID 11764719)'],
+      ['Forma', 'Polvo liofilizado blanco, en vial sellado'],
+    ],
+    coa: 'En SS-31 la espectrometría de masas debe mostrar el ion [M+H]+ cerca de 640,4 y, por las tres ' +
+      'cargas positivas de la molécula, muchas veces también el [M+2H]2+ cerca de 320,7. La D-arginina de ' +
+      'la posición 1 hace que la pureza por HPLC pese más de lo normal: la versión con L-arginina tiene ' +
+      'exactamente la misma masa y solo la separa la cromatografía. El certificado también debe indicar ' +
+      'la sal (acetato o trifluoroacetato), porque cambia el peso por vial.',
+    lit: 'La serie SS, de Szeto-Schiller, salió del trabajo conjunto de Hazel Szeto, en el Weill Medical ' +
+      'College de Cornell, y Peter Schiller, en Montreal: tetrapéptidos que alternan residuos aromáticos y ' +
+      'básicos. En 2004 Zhao y colaboradores los describieron como antioxidantes que atraviesan la membrana ' +
+      'celular y se concentran unas 1.000 veces en la membrana mitocondrial interna. La dimetiltirosina era ' +
+      'la pieza que captaba las especies reactivas de oxígeno, y los análogos sin ella no lo hacían. Ese ' +
+      'trabajo usó células neuronales N2A, mitocondrias aisladas y corazón aislado. En 2013 Birk y ' +
+      'colaboradores, del mismo grupo, mostraron con un análogo fluorescente que SS-31 se une con alta ' +
+      'afinidad a la cardiolipina, y lo estudiaron en un modelo de isquemia renal en rata.',
+    refs: [
+      ['Zhao K, Zhao GM, Wu D, Soong Y, Birk AV, Schiller PW, Szeto HH. Cell-permeable Peptide Antioxidants Targeted to Inner Mitochondrial Membrane inhibit Mitochondrial Swelling, Oxidative Cell Death, and Reperfusion Injury. J Biol Chem. 2004;279(33):34682-90.', 'https://doi.org/10.1074/jbc.M402999200'],
+      ['Birk AV, Liu S, Soong Y, et al. The Mitochondrial-Targeted Compound SS-31 Re-Energizes Ischemic Mitochondria by Interacting with Cardiolipin. J Am Soc Nephrol. 2013;24(8):1250-61.', 'https://doi.org/10.1681/ASN.2012121216'],
+    ],
+    faq: [
+      { q: '¿SS-31 y elamipretida son lo mismo?',
+        a: 'Sí. Es la misma molécula, D-Arg-Dmt-Lys-Phe-NH2, con la fórmula C32H49N9O5. SS-31 es el nombre ' +
+           'de la serie de laboratorio; elamipretida es su denominación común, y MTP-131 y Bendavia son ' +
+           'códigos y nombres que tuvo durante su desarrollo.' },
+      { q: '¿Qué significa «SS» en SS-31?',
+        a: 'Szeto-Schiller, por Hazel Szeto y Peter Schiller, que diseñaron la serie de tetrapéptidos de la ' +
+           'que sale. El número distingue cada compuesto de la serie.' },
+      { q: '¿Qué es la Dmt de la secuencia?',
+        a: 'La 2′,6′-dimetil-L-tirosina: una tirosina con dos grupos metilo en el anillo. No es uno de los ' +
+           '20 aminoácidos estándar, así que la fórmula de SS-31 no sale de una calculadora de secuencias ' +
+           'normal.' },
+    ],
+  },
+  'nad-plus': {
+    rows: [
+      ['Tipo de molécula', 'Dinucleótido, no es un péptido'],
+      ['Estructura', 'Nicotinamida mononucleótido y adenosina monofosfato unidos por un puente pirofosfato'],
+      ['Fórmula', 'C21H27N7O14P2, 663,4 g/mol (PubChem CID 5892)'],
+      ['Masa monoisotópica', '663,11'],
+      ['Otros nombres', 'Nadida, β-NAD, coenzima I, difosfopiridina nucleótido (DPN), cozimasa'],
+      ['Forma', 'Polvo blanco o blanquecino, en vial sellado'],
+    ],
+    massStep: 'La identidad coincide con la masa esperada (663,11 monoisotópica) o con el tiempo de ' +
+      'retención de un patrón de referencia por HPLC.',
+    coa: 'NAD+ es una molécula pequeña, así que la identidad se comprueba por HPLC frente a un patrón de ' +
+      'referencia (mismo tiempo de retención) y por espectrometría de masas: [M+H]+ cerca de 664,1 en modo ' +
+      'positivo o [M-H]- cerca de 662,1 en negativo. Las impurezas típicas son sus productos de hidrólisis, ' +
+      'nicotinamida y ADP-ribosa, y la forma reducida, NADH, que absorbe a 340 nm y NAD+ no. El certificado ' +
+      'debe decir si el producto es el ácido libre (CAS 53-84-9) o una sal.',
+    lit: 'En 1906 Arthur Harden y William John Young vieron que el jugo de levadura dejaba de fermentar ' +
+      'después de dializarlo y que recuperaba esa capacidad al añadirle el dializado hervido. Había un ' +
+      'factor pequeño y estable al calor, que llamaron co-ferment y que después se conoció como cozimasa. ' +
+      'Hans von Euler-Chelpin estableció su naturaleza de nucleótido, y Harden y él compartieron el Nobel de ' +
+      'Química de 1929. Hoy se estudia en modelos celulares y animales como coenzima de reacciones redox y ' +
+      'como sustrato de enzimas que lo consumen, como las sirtuinas; la revisión de Cantó, Menzies y Auwerx ' +
+      '(2015) reúne ese trabajo.',
+    refs: [
+      ['Harden A, Young WJ. The alcoholic ferment of yeast-juice. Proc R Soc Lond B. 1906;77(519):405-20.', 'https://doi.org/10.1098/rspb.1906.0029'],
+      ['Cantó C, Menzies KJ, Auwerx J. NAD+ Metabolism and the Control of Energy Homeostasis: A Balancing Act between Mitochondria and the Nucleus. Cell Metab. 2015;22(1):31-53.', 'https://doi.org/10.1016/j.cmet.2015.05.023'],
+    ],
+    faq: [
+      { q: '¿NAD+ es un péptido?',
+        a: 'No. Es un dinucleótido: dos nucleótidos, uno con nicotinamida y otro con adenina, unidos por sus ' +
+           'grupos fosfato. No tiene aminoácidos ni enlaces peptídicos. Está en el catálogo junto a los ' +
+           'péptidos porque se estudia en los mismos modelos de función mitocondrial.' },
+      { q: '¿NAD+ y NADH son lo mismo?',
+        a: 'No. Son las dos formas del mismo par redox: NAD+ es la oxidada y NADH la reducida, que lleva un ' +
+           'ion hidruro más. Se distinguen en el laboratorio porque NADH absorbe luz a 340 nm y NAD+ no.' },
+    ],
+  },
+  'ahk-cu': {
+    rows: [
+      ['Secuencia', 'Ala-His-Lis (AHK) con cobre(II)'],
+      ['Longitud', 'Tripéptido, 3 aminoácidos'],
+      ['Diferencia con GHK-Cu', 'Alanina en lugar de glicina en la posición 1: un grupo metilo más (+14,02)'],
+      ['Tripéptido sin cobre', 'C15H26N6O4, 354,41 g/mol (PubChem CID 7408502)'],
+      ['Otros nombres', 'L-alanil-L-histidil-L-lisina-cobre(II)'],
+      ['Forma', 'Polvo liofilizado de color azul, en vial sellado'],
+    ],
+    coa: 'En AHK-Cu la espectrometría de masas puede informar el tripéptido solo (monoisotópica 354,20; ion ' +
+      '[M+H]+ cerca de 355,2) o el complejo con cobre (cerca de 416,1 con cobre-63 y 418,1 con cobre-65). ' +
+      'Esos valores quedan 14 unidades por encima de los de GHK-Cu, y esa diferencia es la forma de ' +
+      'confirmar que el vial no es el otro tripéptido. El CAS 682809-81-0 corresponde en PubChem a la sal ' +
+      'monoclorhidrato del complejo, así que el certificado debe decir qué forma pesó.',
+    lit: 'AHK-Cu tiene mucha menos literatura que GHK-Cu, y casi todo lo publicado sobre complejos de ' +
+      'cobre de tripéptidos trata del segundo. La secuencia AHK es la de las posiciones 2 a 4 del extremo ' +
+      'N-terminal de la albúmina humana (Asp-Ala-His-Lys), un sitio de unión de cobre que se ha estudiado por ' +
+      'separado: en 2001 Bar-Or y colaboradores describieron in vitro que un análogo de ese tramo, DAHK, ' +
+      'impedía la formación de especies reactivas de oxígeno inducida por cobre.',
+    refs: [
+      ['Bar-Or D, Rael LT, Lau EP, et al. An Analog of the Human Albumin N-Terminus (Asp-Ala-His-Lys) Prevents Formation of Copper-Induced Reactive Oxygen Species. Biochem Biophys Res Commun. 2001;284(3):856-62.', 'https://doi.org/10.1006/bbrc.2001.5042'],
+    ],
+    faq: [
+      { q: '¿Qué diferencia hay entre AHK-Cu y GHK-Cu?',
+        a: 'Un aminoácido. GHK-Cu empieza por glicina y AHK-Cu por alanina, que tiene un grupo metilo más. ' +
+           'Por eso el tripéptido sin cobre pesa 354,4 g/mol en AHK frente a 340,4 en GHK, y en el análisis ' +
+           'de masas todos los iones salen 14 unidades más arriba. En los dos la histidina está en la ' +
+           'posición 2.' },
+      { q: '¿Qué relación tiene AHK con la albúmina?',
+        a: 'La albúmina humana empieza por Asp-Ala-His-Lys (DAHK), y AHK son sus posiciones 2 a 4. En DAHK la ' +
+           'histidina queda en la posición 3, que es el motivo clásico de unión de cobre de la albúmina; en ' +
+           'AHK, como en GHK, queda en la 2. No son el mismo sitio de unión.' },
+    ],
+  },
   // El agua no es un péptido: no lleva COA de pureza, así que en vez de «qué revisar
   // en el certificado» va «qué revisar en el vial». Los datos son los del etiquetado
   // USP publicado en DailyMed (verificado el 2026-10-27), no los de nuestra etiqueta.
@@ -755,15 +1194,15 @@ function fichaExtraEs(p) {
 <p>${f.coa}</p>
 <ol>
 <li>El número de lote del certificado es el mismo que trae impreso el vial${batch ? ` (el vigente es ${batch.code})` : ''}. Se comprueba en la <a href="es/verify/">página de verificación</a>.</li>
-<li>La identidad por espectrometría de masas coincide con la masa esperada. Puedes calcularla desde la secuencia con la <a href="es/tools/peptide-molecular-weight/">calculadora de peso molecular</a>.</li>
+<li>${f.massStep || 'La identidad por espectrometría de masas coincide con la masa esperada. Puedes calcularla desde la secuencia con la <a href="es/tools/peptide-molecular-weight/">calculadora de peso molecular</a>.'}</li>
 <li>La pureza por HPLC aparece como porcentaje del pico principal. Nuestra especificación de compra es de 99 % o más.</li>
 </ol>
 <p>La lista completa de lo que debe traer un certificado está en el <a href="es/tools/coa-checklist/">checklist del COA</a>.</p>
 <h2>Presentaciones de ${n} en Panamá</h2>
 <ul>${pres.map((x) => `<li><a href="es/product/${x.slug}/">${n} ${x.mg}</a>: ${x.sizes.map((z) => `${SIZE_ES[z.label] || z.label} $${z.price.toFixed(2)}`).join(', ')}${x.outOfStock ? '. Agotado por ahora' : ''}.</li>`).join('')}</ul>
-<h2>${n} en la literatura científica</h2>
+${f.lit ? `<h2>${n} en la literatura científica</h2>
 <p>${f.lit}</p>
-<ol class="pd-refs">${f.refs.map(([t, u]) => `<li>${t} <a href="${u}" rel="nofollow noopener" target="_blank">Ver publicación</a></li>`).join('')}</ol>`;
+<ol class="pd-refs">${f.refs.map(([t, u]) => `<li>${t} <a href="${u}" rel="nofollow noopener" target="_blank">Ver publicación</a></li>`).join('')}</ol>` : ''}`;
 }
 
 /* Envío y pagos: un solo origen para el FAQ de producto, pricing.md y llms-full.txt. */

@@ -1,6 +1,6 @@
 # Pricing · Codex Research (codexresearchlab.com)
 
-All prices in USD. Last updated: 2026-10-27.
+All prices in USD. Last updated: 2026-11-01.
 Research peptides sold strictly for laboratory research and development, not for
 human or animal consumption.
 
@@ -62,7 +62,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 
 - URL: https://codexresearchlab.com/product/mots-c/
 - CAS number: 1627580-64-6
-- PubChem CID: 85718457
+- PubChem CID: 146675088
 - Purity: 99% (HPLC), certificate of analysis per batch
 - Availability: In stock
 - Single vial: $85.00 USD

@@ -1346,7 +1346,7 @@ const BUSINESS = {
   legalName: 'Codex Research LLC',
   address: '30 N Gould St, Sheridan, WY 82801, United States',
   email: 'sales@codexresearchlab.com',
-  phone: '+507 6335-4625',
+  phone: '+507 6315-9109',
 };
 
 /* Productos retirados del catálogo: no se venden, no salen en catálogo, sitemap
@@ -1372,5 +1372,5 @@ const AREAS = [
 
 window.REA = { PRODUCTS, RETIRED_PRODUCTS, AREAS, FAQS, FAQS_ES, BUSINESS, COUNTRIES, MANUAL_PAY, COUPONS, BATCHES, batchFor, SALE,
   STOCK_BY_COUNTRY, applyStock, setStock,
-  WHATSAPP: '50763354625', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
+  WHATSAPP: '50763159109', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
   faqs, overview };

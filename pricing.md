@@ -1,6 +1,6 @@
 # Pricing · Codex Research (codexresearchlab.com)
 
-All prices in USD. Last updated: 2026-11-01.
+All prices in USD. Last updated: 2026-11-02.
 Research peptides sold strictly for laboratory research and development, not for
 human or animal consumption.
 
@@ -217,6 +217,6 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 
 ## Contact
 
-- WhatsApp: +507 6335-4625
+- WhatsApp: +507 6315-9109
 - Email: sales@codexresearchlab.com
 - Verify a batch: https://codexresearchlab.com/verify/

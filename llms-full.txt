@@ -47,6 +47,7 @@ A dual GIP and GLP-1 receptor agonist studied in models of metabolic signaling, 
 - Molecular formula: C221H342N46O68
 - Molecular weight: 4731.4 g/mol
 - Research areas: GIP signaling, GLP-1 signaling, Glucagon signaling, Metabolism
+- Independent lab test: GLP3-R (retatrutide) 10 mg, batch CDX-1017: tested by Janoshik on Oct 2, 2026, 99.777% purity, 10.33 mg measured content, verification key 9UIDR6QE68DG (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-retatrutide-10mg.webp
 - Single vial: $150.00 USD
 - Pack · 3 vials: $414.00 USD
 

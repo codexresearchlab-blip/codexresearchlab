@@ -1,6 +1,6 @@
 # Pricing · Codex Research (codexresearchlab.com)
 
-All prices in USD. Last updated: 2026-11-03.
+All prices in USD. Last updated: 2026-11-04.
 Research peptides sold strictly for laboratory research and development, not for
 human or animal consumption.
 
@@ -23,6 +23,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $149.00 USD
 - Pack · 3 vials: $411.24 USD (8% off)
+- Pack · 5 vials: $633.25 USD (15% off)
+- Pack · 10 vials: $1117.50 USD (25% off)
 
 ### GLP3-R (retatrutide) · 10 mg per vial
 
@@ -31,6 +33,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $150.00 USD
 - Pack · 3 vials: $414.00 USD (8% off)
+- Pack · 5 vials: $637.50 USD (15% off)
+- Pack · 10 vials: $1125.00 USD (25% off)
 
 ### GLP3-R (retatrutide) · 20 mg per vial
 
@@ -39,6 +43,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $194.00 USD
 - Pack · 3 vials: $535.44 USD (8% off)
+- Pack · 5 vials: $824.50 USD (15% off)
+- Pack · 10 vials: $1455.00 USD (25% off)
 
 ### GLP3-R (retatrutide) · 30 mg per vial
 
@@ -47,6 +53,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $214.00 USD
 - Pack · 3 vials: $590.64 USD (8% off)
+- Pack · 5 vials: $909.50 USD (15% off)
+- Pack · 10 vials: $1605.00 USD (25% off)
 
 ### BPC-157 · 10 mg per vial
 
@@ -57,6 +65,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $79.00 USD
 - Pack · 3 vials: $218.04 USD (8% off)
+- Pack · 5 vials: $335.75 USD (15% off)
+- Pack · 10 vials: $592.50 USD (25% off)
 
 ### MOTS-c · 10 mg per vial
 
@@ -67,6 +77,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $85.00 USD
 - Pack · 3 vials: $234.60 USD (8% off)
+- Pack · 5 vials: $361.25 USD (15% off)
+- Pack · 10 vials: $637.50 USD (25% off)
 
 ### Ipamorelin · 10 mg per vial
 
@@ -77,6 +89,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $135.00 USD
 - Pack · 3 vials: $372.60 USD (8% off)
+- Pack · 5 vials: $573.75 USD (15% off)
+- Pack · 10 vials: $1012.50 USD (25% off)
 
 ### GHK-Cu · 100 mg per vial
 
@@ -86,6 +100,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $95.00 USD
 - Pack · 3 vials: $262.20 USD (8% off)
+- Pack · 5 vials: $403.75 USD (15% off)
+- Pack · 10 vials: $712.50 USD (25% off)
 
 ### GHK-Cu · 50 mg per vial
 
@@ -95,6 +111,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $64.00 USD
 - Pack · 3 vials: $176.64 USD (8% off)
+- Pack · 5 vials: $272.00 USD (15% off)
+- Pack · 10 vials: $480.00 USD (25% off)
 
 ### PT-141 · 10 mg per vial
 
@@ -105,6 +123,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $85.00 USD
 - Pack · 3 vials: $234.60 USD (8% off)
+- Pack · 5 vials: $361.25 USD (15% off)
+- Pack · 10 vials: $637.50 USD (25% off)
 
 ### NAD+ · 1000 mg per vial
 
@@ -115,6 +135,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $130.00 USD
 - Pack · 3 vials: $358.80 USD (8% off)
+- Pack · 5 vials: $552.50 USD (15% off)
+- Pack · 10 vials: $975.00 USD (25% off)
 
 ### AHK-Cu · 50 mg per vial
 
@@ -133,6 +155,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $164.00 USD
 - Pack · 3 vials: $452.64 USD (8% off)
+- Pack · 5 vials: $697.00 USD (15% off)
+- Pack · 10 vials: $1230.00 USD (25% off)
 
 ### Tesamorelin · 20 mg per vial
 
@@ -143,6 +167,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $279.00 USD
 - Pack · 3 vials: $770.04 USD (8% off)
+- Pack · 5 vials: $1185.75 USD (15% off)
+- Pack · 10 vials: $2092.50 USD (25% off)
 
 ### CJC-1295 no DAC · 10 mg per vial
 
@@ -152,6 +178,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $129.00 USD
 - Pack · 3 vials: $356.04 USD (8% off)
+- Pack · 5 vials: $548.25 USD (15% off)
+- Pack · 10 vials: $967.50 USD (25% off)
 
 ### IGF-1 LR3 · 1 mg per vial
 
@@ -160,6 +188,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $159.00 USD
 - Pack · 3 vials: $438.84 USD (8% off)
+- Pack · 5 vials: $675.75 USD (15% off)
+- Pack · 10 vials: $1192.50 USD (25% off)
 
 ### TB-500 · 10 mg per vial
 
@@ -169,6 +199,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $119.00 USD
 - Pack · 3 vials: $328.44 USD (8% off)
+- Pack · 5 vials: $505.75 USD (15% off)
+- Pack · 10 vials: $892.50 USD (25% off)
 
 ### SS-31 · 10 mg per vial
 
@@ -178,6 +210,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $99.00 USD
 - Pack · 3 vials: $273.24 USD (8% off)
+- Pack · 5 vials: $420.75 USD (15% off)
+- Pack · 10 vials: $742.50 USD (25% off)
 
 ### Epithalon · 10 mg per vial
 
@@ -187,6 +221,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $74.00 USD
 - Pack · 3 vials: $204.24 USD (8% off)
+- Pack · 5 vials: $314.50 USD (15% off)
+- Pack · 10 vials: $555.00 USD (25% off)
 
 ### Kisspeptin-10 · 10 mg per vial
 
@@ -196,6 +232,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: Out of stock
 - Single vial: $94.00 USD
 - Pack · 3 vials: $259.44 USD (8% off)
+- Pack · 5 vials: $399.50 USD (15% off)
+- Pack · 10 vials: $705.00 USD (25% off)
 
 ### Bacteriostatic Water · 3 ml per vial
 
@@ -205,6 +243,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $10.00 USD
 - Pack · 3 vials: $27.60 USD (8% off)
+- Pack · 5 vials: $42.50 USD (15% off)
+- Pack · 10 vials: $75.00 USD (25% off)
 
 ### Bacteriostatic Water · 10 ml per vial
 
@@ -214,6 +254,8 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Availability: In stock
 - Single vial: $17.00 USD
 - Pack · 3 vials: $46.92 USD (8% off)
+- Pack · 5 vials: $72.25 USD (15% off)
+- Pack · 10 vials: $127.50 USD (25% off)
 
 ## Contact
 

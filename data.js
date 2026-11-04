@@ -13,6 +13,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 149 },
       { label: 'Pack · 3 vials', price: 411.24, save: '8%' },
+      { label: 'Pack · 5 vials', price: 633.25, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1117.50, save: '25%' },
     ],
     overview: 'A dual GIP and GLP-1 receptor agonist studied in models of metabolic signaling, glucose regulation and energy balance.',
     overviewEs: 'Agonista dual de los receptores GIP y GLP-1, estudiado en modelos de señalización metabólica, regulación de la glucosa y balance energético.',
@@ -27,6 +29,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 150 },
       { label: 'Pack · 3 vials', price: 414.00, save: '8%' },
+      { label: 'Pack · 5 vials', price: 637.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1125.00, save: '25%' },
     ],
     overview: 'A triple GIP / GLP-1 / glucagon receptor agonist studied in models of metabolic signaling, glucose regulation and energy balance.',
     overviewEs: 'Agonista triple de los receptores GIP / GLP-1 / glucagón, estudiado en modelos de señalización metabólica, regulación de la glucosa y balance energético.',
@@ -41,6 +45,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 194 },
       { label: 'Pack · 3 vials', price: 535.44, save: '8%' },
+      { label: 'Pack · 5 vials', price: 824.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1455.00, save: '25%' },
     ],
     overview: 'A triple GIP / GLP-1 / glucagon receptor agonist studied in models of metabolic signaling, glucose regulation and energy balance.',
     overviewEs: 'Agonista triple de los receptores GIP / GLP-1 / glucagón, estudiado en modelos de señalización metabólica, regulación de la glucosa y balance energético.',
@@ -55,6 +61,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 214 },
       { label: 'Pack · 3 vials', price: 590.64, save: '8%' },
+      { label: 'Pack · 5 vials', price: 909.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1605.00, save: '25%' },
     ],
     overview: 'A triple GIP / GLP-1 / glucagon receptor agonist studied in models of metabolic signaling, glucose regulation and energy balance.',
     overviewEs: 'Agonista triple de los receptores GIP / GLP-1 / glucagón, estudiado en modelos de señalización metabólica, regulación de la glucosa y balance energético.',
@@ -69,6 +77,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 79 },
       { label: 'Pack · 3 vials', price: 218.04, save: '8%' },
+      { label: 'Pack · 5 vials', price: 335.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 592.50, save: '25%' },
     ],
     overview: 'BPC-157 is a pentadecapeptide derived from a protective protein found in gastric juice. In research settings it has been studied for its interaction with signaling pathways associated with tissue repair and angiogenesis.',
     overviewEs: 'BPC-157 es un pentadecapéptido derivado de una proteína protectora presente en el jugo gástrico. En investigación se ha estudiado por su interacción con vías de señalización asociadas a la reparación de tejidos y a la angiogénesis.',
@@ -83,6 +93,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 85 },
       { label: 'Pack · 3 vials', price: 234.60, save: '8%' },
+      { label: 'Pack · 5 vials', price: 361.25, save: '15%' },
+      { label: 'Pack · 10 vials', price: 637.50, save: '25%' },
     ],
     overview: 'MOTS-c is a mitochondrial-derived peptide studied in models of metabolic homeostasis and cell signaling.',
     overviewEs: 'MOTS-c es un péptido de origen mitocondrial estudiado en modelos de homeostasis metabólica y señalización celular.',
@@ -97,6 +109,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 135 },
       { label: 'Pack · 3 vials', price: 372.60, save: '8%' },
+      { label: 'Pack · 5 vials', price: 573.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1012.50, save: '25%' },
     ],
     overview: 'Ipamorelin is a selective growth hormone secretagogue and ghrelin receptor agonist studied in models of growth hormone regulation.',
     overviewEs: 'Ipamorelina es un secretagogo selectivo de hormona de crecimiento y agonista del receptor de grelina, estudiado en modelos de regulación de la hormona de crecimiento.',
@@ -112,6 +126,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 95 },
       { label: 'Pack · 3 vials', price: 262.20, save: '8%' },
+      { label: 'Pack · 5 vials', price: 403.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 712.50, save: '25%' },
     ],
     overview: 'GHK-Cu (copper tripeptide-1, Gly-His-Lys-copper) is a naturally occurring copper-binding peptide studied in models of tissue remodeling, collagen synthesis and wound repair.',
     overviewEs: 'GHK-Cu (tripéptido de cobre-1, Gli-His-Lis-cobre) es un péptido natural con afinidad por el cobre, estudiado en modelos de remodelación de tejidos, síntesis de colágeno y reparación de heridas.',
@@ -126,6 +142,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 64 },
       { label: 'Pack · 3 vials', price: 176.64, save: '8%' },
+      { label: 'Pack · 5 vials', price: 272.00, save: '15%' },
+      { label: 'Pack · 10 vials', price: 480.00, save: '25%' },
     ],
     overview: 'GHK-Cu (copper tripeptide-1, Gly-His-Lys-copper) is a naturally occurring copper-binding peptide studied in models of tissue remodeling, collagen synthesis and wound repair.',
     overviewEs: 'GHK-Cu (tripéptido de cobre-1, Gli-His-Lis-cobre) es un péptido natural con afinidad por el cobre, estudiado en modelos de remodelación de tejidos, síntesis de colágeno y reparación de heridas.',
@@ -140,6 +158,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 85 },
       { label: 'Pack · 3 vials', price: 234.60, save: '8%' },
+      { label: 'Pack · 5 vials', price: 361.25, save: '15%' },
+      { label: 'Pack · 10 vials', price: 637.50, save: '25%' },
     ],
     overview: 'PT-141 (bremelanotide) is a melanocortin receptor agonist studied in models of receptor signaling and neurobehavioral pathways.',
     overviewEs: 'PT-141 (bremelanotida) es un agonista de los receptores de melanocortina, estudiado en modelos de señalización de receptores y vías neuroconductuales.',
@@ -153,6 +173,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 130 },
       { label: 'Pack · 3 vials', price: 358.80, save: '8%' },
+      { label: 'Pack · 5 vials', price: 552.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 975.00, save: '25%' },
     ],
     overview: 'NAD+ (nicotinamide adenine dinucleotide) is an essential coenzyme studied in models of cellular metabolism, mitochondrial function and sirtuin signaling.',
     overviewEs: 'NAD+ (nicotinamida adenina dinucleótido) es una coenzima esencial estudiada en modelos de metabolismo celular, función mitocondrial y señalización de sirtuinas.',
@@ -180,6 +202,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 164 },
       { label: 'Pack · 3 vials', price: 452.64, save: '8%' },
+      { label: 'Pack · 5 vials', price: 697.00, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1230.00, save: '25%' },
     ],
     overview: 'Tesamorelin is a synthetic analog of growth hormone-releasing hormone (GHRH 1-44) carrying an N-terminal trans-3-hexenoyl group. It is studied in models of GHRH receptor signaling and growth hormone regulation.',
     overviewEs: 'Tesamorelina es un análogo sintético de la hormona liberadora de hormona de crecimiento (GHRH 1-44) con un grupo trans-3-hexenoilo en el extremo N-terminal. Se estudia en modelos de señalización del receptor de GHRH y regulación de la hormona de crecimiento.',
@@ -194,6 +218,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 279 },
       { label: 'Pack · 3 vials', price: 770.04, save: '8%' },
+      { label: 'Pack · 5 vials', price: 1185.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 2092.50, save: '25%' },
     ],
     overview: 'Tesamorelin is a synthetic analog of growth hormone-releasing hormone (GHRH 1-44) carrying an N-terminal trans-3-hexenoyl group. It is studied in models of GHRH receptor signaling and growth hormone regulation.',
     overviewEs: 'Tesamorelina es un análogo sintético de la hormona liberadora de hormona de crecimiento (GHRH 1-44) con un grupo trans-3-hexenoilo en el extremo N-terminal. Se estudia en modelos de señalización del receptor de GHRH y regulación de la hormona de crecimiento.',
@@ -208,6 +234,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 129 },
       { label: 'Pack · 3 vials', price: 356.04, save: '8%' },
+      { label: 'Pack · 5 vials', price: 548.25, save: '15%' },
+      { label: 'Pack · 10 vials', price: 967.50, save: '25%' },
     ],
     overview: 'CJC-1295 without DAC (modified GRF 1-29) is a tetrasubstituted analog of the first 29 amino acids of growth hormone-releasing hormone, studied in models of GHRH receptor signaling and growth hormone regulation.',
     overviewEs: 'CJC-1295 sin DAC (GRF 1-29 modificado) es un análogo con cuatro sustituciones de los primeros 29 aminoácidos de la hormona liberadora de hormona de crecimiento, estudiado en modelos de señalización del receptor de GHRH y regulación de la hormona de crecimiento.',
@@ -226,6 +254,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 159 },
       { label: 'Pack · 3 vials', price: 438.84, save: '8%' },
+      { label: 'Pack · 5 vials', price: 675.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 1192.50, save: '25%' },
     ],
     overview: 'IGF-1 LR3 is a recombinant analog of insulin-like growth factor 1 with an arginine substitution at position 3 and a 13-amino-acid N-terminal extension, which lowers its affinity for IGF-binding proteins. It is studied in cell culture and in models of IGF-1 receptor signaling.',
     overviewEs: 'IGF-1 LR3 es un análogo recombinante del factor de crecimiento similar a la insulina tipo 1, con una arginina en la posición 3 y una extensión N-terminal de 13 aminoácidos que reduce su afinidad por las proteínas de unión a IGF. Se estudia en cultivo celular y en modelos de señalización del receptor de IGF-1.',
@@ -240,6 +270,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 119 },
       { label: 'Pack · 3 vials', price: 328.44, save: '8%' },
+      { label: 'Pack · 5 vials', price: 505.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 892.50, save: '25%' },
     ],
     overview: 'TB-500 is a synthetic peptide derived from thymosin beta-4, an actin-sequestering protein. It is studied in models of actin regulation, cell migration and tissue repair.',
     overviewEs: 'TB-500 es un péptido sintético derivado de la timosina beta-4, una proteína que secuestra actina. Se estudia en modelos de regulación de la actina, migración celular y reparación de tejidos.',
@@ -254,6 +286,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 99 },
       { label: 'Pack · 3 vials', price: 273.24, save: '8%' },
+      { label: 'Pack · 5 vials', price: 420.75, save: '15%' },
+      { label: 'Pack · 10 vials', price: 742.50, save: '25%' },
     ],
     overview: 'SS-31 (elamipretide) is a mitochondria-targeted tetrapeptide that associates with cardiolipin in the inner mitochondrial membrane. It is studied in models of mitochondrial function and oxidative stress.',
     overviewEs: 'SS-31 (elamipretida) es un tetrapéptido dirigido a la mitocondria que se asocia a la cardiolipina de la membrana mitocondrial interna. Se estudia en modelos de función mitocondrial y estrés oxidativo.',
@@ -268,6 +302,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 74 },
       { label: 'Pack · 3 vials', price: 204.24, save: '8%' },
+      { label: 'Pack · 5 vials', price: 314.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 555.00, save: '25%' },
     ],
     overview: 'Epithalon (Ala-Glu-Asp-Gly) is a synthetic tetrapeptide modeled on epithalamin, a pineal gland extract. It is studied in models of telomerase activity and cellular aging.',
     overviewEs: 'Epithalon (Ala-Glu-Asp-Gli) es un tetrapéptido sintético basado en la epitalamina, un extracto de la glándula pineal. Se estudia en modelos de actividad de la telomerasa y envejecimiento celular.',
@@ -282,6 +318,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 94 },
       { label: 'Pack · 3 vials', price: 259.44, save: '8%' },
+      { label: 'Pack · 5 vials', price: 399.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 705.00, save: '25%' },
     ],
     overview: 'Kisspeptin-10 is the C-terminal decapeptide of kisspeptin and an agonist of the KISS1 receptor (GPR54). It is studied in models of hypothalamic-pituitary-gonadal signaling.',
     overviewEs: 'Kisspeptina-10 es el decapéptido C-terminal de la kisspeptina y agonista del receptor KISS1 (GPR54). Se estudia en modelos de señalización del eje hipotálamo-hipófisis-gónadas.',
@@ -295,6 +333,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 10 },
       { label: 'Pack · 3 vials', price: 27.60, save: '8%' },
+      { label: 'Pack · 5 vials', price: 42.50, save: '15%' },
+      { label: 'Pack · 10 vials', price: 75.00, save: '25%' },
     ],
     overview: 'Bacteriostatic water is sterile, nonpyrogenic water with 0.9% benzyl alcohol added as a preservative, to USP specification. It is supplied as a general laboratory diluent; the label states its composition, pH and storage conditions.',
     overviewEs: 'El agua bacteriostática es agua estéril y apirógena con alcohol bencílico al 0,9% como conservante, según la especificación USP. Se suministra como diluyente general de laboratorio; la etiqueta indica su composición, pH y condiciones de almacenamiento.',
@@ -308,6 +348,8 @@ const PRODUCTS = [
     sizes: [
       { label: 'Single vial', price: 17 },
       { label: 'Pack · 3 vials', price: 46.92, save: '8%' },
+      { label: 'Pack · 5 vials', price: 72.25, save: '15%' },
+      { label: 'Pack · 10 vials', price: 127.50, save: '25%' },
     ],
     overview: 'Bacteriostatic water is sterile, nonpyrogenic water with 0.9% benzyl alcohol added as a preservative, to USP specification. It is supplied as a general laboratory diluent; the label states its composition, pH and storage conditions. This is the 10 ml presentation.',
     overviewEs: 'El agua bacteriostática es agua estéril y apirógena con alcohol bencílico al 0,9% como conservante, según la especificación USP. Se suministra como diluyente general de laboratorio; la etiqueta indica su composición, pH y condiciones de almacenamiento. Es la presentación de 10 ml.',
@@ -1273,7 +1315,7 @@ function esLang() {
   return !!el && (el.getAttribute('lang') || 'en').slice(0, 2) === 'es';
 }
 
-const SIZE_ES = { 'Single vial': 'Vial individual', 'Pack · 3 vials': 'Pack · 3 viales' };
+const SIZE_ES = { 'Single vial': 'Vial individual', 'Pack · 3 vials': 'Pack · 3 viales', 'Pack · 5 vials': 'Pack · 5 viales', 'Pack · 10 vials': 'Pack · 10 viales' };
 
 function productFaqEs(p) {
   const name = nameEs(p);

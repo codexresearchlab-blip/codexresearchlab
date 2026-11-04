@@ -976,6 +976,9 @@ s.was, .pd-price-was {
 .product-price s.was { font-size: .88rem; }
 .pd-opt-price s.was { font-size: .85rem; }
 .pd-price-was { font-size: 1.05rem; }
+.pd-ship-hint { font-size: .85rem; color: var(--muted); margin: -.4rem 0 .9rem; }
+.pd-ship-hint b { color: var(--ink); }
+.pd-ship-hint.ok, .pd-ship-hint.ok b { color: #1f7a55; }
 .pd-add { width: 100%; justify-content: center; font-size: 1rem; padding: 1rem; }
 .pd-note { font-size: .8rem; line-height: 1.6; color: var(--muted); margin-top: 1.4rem; }
 .pd-note b { color: var(--ink); font-weight: 600; }

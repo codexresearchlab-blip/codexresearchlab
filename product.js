@@ -208,6 +208,8 @@
             </div>
           </div>
 
+          <p class="pd-ship-hint" id="pdShipHint" aria-live="polite"></p>
+
           <button class="btn btn-primary pd-add" id="pdAdd"${oos ? ' disabled' : ''}>${oos ? T('Out of stock') : T('Add to cart')}</button>
 
           <!-- Las tres dudas de compra (¿es real?, ¿llega?, ¿cómo pago?) se
@@ -342,6 +344,11 @@
   const stickyPriceEl = document.getElementById('pdStickyPrice');
   const priceWasEl = document.getElementById('pdPriceWas');
   const priceUnitEl = document.getElementById('pdPriceUnit');
+  // Tope en las existencias, contado en VIALES: p.stock son viales y cada pack
+  // consume los suyos (2 packs de 10 son 20 viales). Siempre deja pedir 1: si
+  // la bodega no alcanza, el pedido se cubre por mayorista (codex-inventario).
+  const maxQty = () => (p.stock != null
+    ? Math.max(1, Math.floor(p.stock / packUnits(selectedSize.label))) : Infinity);
   function refreshPrice() {
     const total = money(selectedSize.price * qty);
     priceEl.textContent = total;
@@ -351,7 +358,31 @@
     if (priceWasEl) priceWasEl.textContent = ref ? money(ref * qty) : '';
     if (priceUnitEl) priceUnitEl.textContent = perVial(selectedSize);
     priceEl.classList.remove('bump'); void priceEl.offsetWidth; priceEl.classList.add('bump');
+    refreshShipHint();
   }
+
+  // Envío gratis visible en la ficha, no solo en el carrito (CRO 2026-11-03):
+  // el umbral de Panamá es $100 y el vial típico cuesta $79, así que decir
+  // cuánto falta ANTES de añadir empuja a sumar otro vial o el pack. Cuenta lo
+  // que ya hay en el carrito más lo seleccionado aquí. Sin envío gratis
+  // configurado para el país, la línea no aparece.
+  const shipHintEl = document.getElementById('pdShipHint');
+  function refreshShipHint() {
+    if (!shipHintEl) return;
+    const ship = (window.REACountry.config() || {}).shipping || {};
+    if (oos || !(ship.freeThreshold > 0)) { shipHintEl.hidden = true; return; }
+    const inCart = window.REACart && typeof window.REACart.total === 'function' ? window.REACart.total() : 0;
+    const withThis = inCart + selectedSize.price * qty;
+    const left = ship.freeThreshold - withThis;
+    shipHintEl.hidden = false;
+    shipHintEl.classList.toggle('ok', left <= 0);
+    shipHintEl.innerHTML = left <= 0
+      ? T('This order ships <b>free</b>')
+      : T('<b>{n}</b> away from <b>free shipping</b> (orders from {t})', { n: money(left), t: '$' + ship.freeThreshold });
+  }
+  window.addEventListener('rea-cart-change', refreshShipHint);
+  window.addEventListener('rea-country-change', refreshShipHint);
+  refreshShipHint();
 
   document.getElementById('pdSizes').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-size]');
@@ -361,6 +392,9 @@
     const label = btn.getAttribute('data-size');
     selectedSize = p.sizes.find((s) => s.label === label) || selectedSize;
     document.querySelectorAll('#pdSizes .pd-opt').forEach((b) => b.classList.toggle('active', b === btn));
+    // Al pasar a un pack más grande, la cantidad elegida puede exceder el tope.
+    qty = Math.min(qty, maxQty());
+    qtyValEl.textContent = qty;
     refreshPrice();
   });
 
@@ -388,9 +422,7 @@
   document.getElementById('pdQty').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-q]');
     if (!btn) return;
-    // Tope en las existencias: no ofrecer más unidades de las que hay.
-    const max = p.stock != null ? p.stock : Infinity;
-    qty = Math.min(max, Math.max(1, qty + (btn.getAttribute('data-q') === 'inc' ? 1 : -1)));
+    qty = Math.min(maxQty(), Math.max(1, qty + (btn.getAttribute('data-q') === 'inc' ? 1 : -1)));
     qtyValEl.textContent = qty;
     refreshPrice();
   });

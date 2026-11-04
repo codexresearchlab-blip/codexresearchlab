@@ -259,6 +259,6 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 
 ## Contact
 
-- WhatsApp: +507 6315-9109
+- WhatsApp: +507 6774-9282
 - Email: sales@codexresearchlab.com
 - Verify a batch: https://codexresearchlab.com/verify/

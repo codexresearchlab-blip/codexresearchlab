@@ -258,6 +258,7 @@
             ${p.research.map((r) => `<li>${T(r)}</li>`).join('')}
           </ul>
           ${esPage ? `<div class="pd-panama">${window.REA.panamaBlockEs(p)}</div>` : ''}
+          ${!esPage && window.REA.usBlockEn && window.REA.usBlockEn(p) ? `<div class="pd-panama pd-us">${window.REA.usBlockEn(p)}</div>` : ''}
           ${esPage && window.REA.fichaExtraEs(p) ? `<div class="pd-panama pd-extra">${window.REA.fichaExtraEs(p)}</div>` : ''}
         </div>
         <aside class="pd-info-side">

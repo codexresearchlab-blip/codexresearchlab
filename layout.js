@@ -326,10 +326,22 @@
       // La barra decía "solo instituciones · cuenta aprobada" desde la revisión
       // de Stripe (2026-10-02). Sin Stripe (2026-10-17) se quitó el gate y la
       // barra dice cómo se paga en el país del visitante.
-      const promo = `<b>${T('For laboratory research use only')}</b> · ${isPA ? T('Pay with Yappy or crypto') : T('Pay with Zelle or crypto')}`;
-      ann.innerHTML = isPA
-        ? `${promo}<span class="ann-contact"> · ${waLink}</span>`
-        : `${promo}<span class="ann-contact"> · ${mailLink}</span>`;
+      // 2026-11-04 (auditoría CRO): la barra vende la oferta —packs, envío gratis
+      // y plazo— porque la portada no la mencionaba en ningún sitio. El aviso de
+      // uso en investigación sigue en la barra en escritorio y, en móvil, en el
+      // gate, la ficha, el checkout y el pie.
+      const cfg = window.REACountry.config();
+      const money = (n) => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
+      const maxPack = Math.max(0, ...window.REA.PRODUCTS.flatMap((p) => (p.sizes || [])
+        .map((z) => parseInt(z.save, 10) || 0)));
+      const ship = cfg.shipping && cfg.shipping.freeThreshold;
+      const offer = [
+        maxPack ? `<b>${T('Up to {n}% off on packs').replace('{n}', maxPack)}</b>` : '',
+        ship ? T('Free shipping from {t}').replace('{t}', money(ship)) : '',
+        `<span class="ann-eta">${T(isPA ? cfg.etaShort : cfg.eta)}</span>`,
+      ].filter(Boolean).join(' · ');
+      const ruo = `<span class="ann-ruo"> · ${T('Research use only')}</span>`;
+      ann.innerHTML = `${offer}${ruo}<span class="ann-contact"> · ${isPA ? waLink : mailLink}</span>`;
     }
     const foot = document.getElementById('footerContact');
     if (foot) foot.innerHTML = isPA ? waLink : mailLink;

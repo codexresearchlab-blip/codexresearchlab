@@ -599,6 +599,38 @@ investigación en laboratorio. Más detalles en <a href="es/comprar-peptidos-pan
 péptidos de investigación en Panamá</a>.</p>`;
 }
 
+/* EE. UU. en las fichas en inglés (SEO EE. UU., 2026-11-04). Tres estados según la
+   bodega de EE. UU.: 'us' si hay stock declarado allá, 'pa' si la tabla dice 0 (solo
+   sale de Panamá) y '' si el producto no está en la tabla (no se sabe: se deja el texto
+   de siempre). Los GLP-1 no entran: la Fase 0 del análisis de EE. UU. (26-sep) los saca
+   de cualquier empuje allí, y su ficha se queda como estaba. */
+const US_SEO_SKIP = /^(retatrutide|tirzepatide)/;
+function usShipping(p) {
+  if (US_SEO_SKIP.test(p.slug)) return '';
+  const n = STOCK_BY_COUNTRY.US && STOCK_BY_COUNTRY.US[p.slug];
+  if (n == null) return '';
+  return n > 0 ? 'us' : 'pa';
+}
+
+/* Bloque «Shipping and payment in the U.S.»: solo productos con stock en EE. UU. y sin
+   el agua (la Fase 0 la saca del empuje en EE. UU.). Lo hornea build-seo.js y lo
+   repinta product.js con el stock en vivo, así que desaparece si la bodega se vacía. */
+function usBlockEn(p) {
+  if (usShipping(p) !== 'us' || /^bac-water/.test(p.slug)) return '';
+  const from = Math.min(...p.sizes.map((z) => z.price)).toFixed(2);
+  const s = COUNTRIES.US.shipping;
+  const batch = batchFor(p.slug, p.mg);
+  return `<h2>Shipping and payment in the U.S.</h2>
+<p>U.S. orders of ${p.name} ${p.mg} ship from our stock inside the United States and arrive
+in 48-72 hours. Shipping is $${s.flat} and free on orders over $${s.freeThreshold}. The price is
+the same as in Panama, from $${from} USD. You can pay by Zelle (we email you the payment details
+after you order, and the order ships once the payment is confirmed) or with USDC or USDT.</p>
+<p>${batch ? `Each vial is printed with its batch number (the current one is ${batch.code}), which you
+can look up on the <a href="verify/">verification page</a> to read the independent lab certificate
+before you buy. ` : ''}For laboratory research use only. More in <a href="article/buy-research-peptides-usa/">how
+to buy research peptides in the U.S.</a></p>`;
+}
+
 /* Ficha ES ampliada (E1 de estrategia-posicionamiento-panama-2026-10-26.md). Solo en
    las fichas principales que aparecen aquí: las variantes de otra concentración no la
    llevan para no duplicar texto entre URLs. Igual que panamaBlockEs, la hornea
@@ -1417,5 +1449,5 @@ const AREAS = [
 
 window.REA = { PRODUCTS, RETIRED_PRODUCTS, AREAS, FAQS, FAQS_ES, BUSINESS, COUNTRIES, MANUAL_PAY, COUPONS, BATCHES, batchFor, SALE,
   STOCK_BY_COUNTRY, applyStock, setStock,
-  WHATSAPP: '50763159109', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
+  WHATSAPP: '50763159109', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, usShipping, usBlockEn, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
   faqs, overview };

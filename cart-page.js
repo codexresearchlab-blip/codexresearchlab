@@ -112,7 +112,28 @@
     return `<span class="stock-ok">${T('In stock')}</span>`;
   }
 
-  function itemRow(l) {
+  /* Propuesta de pack (auditoría CRO 2026-11-04): con 1 o 2 viales sueltos se
+     ofrece pasar al pack de 3, con el precio por vial y el ahorro frente a 3
+     sueltos. Si el cambio cruza el umbral de envío gratis, se dice. Solo si hay
+     existencias para 3 viales: ofrecer lo que no se puede servir sería peor. */
+  const PACK3 = 'Pack · 3 vials';
+  function packOffer(l, s) {
+    if (l.size !== 'Single vial' || l.qty > 2) return '';
+    const p = PRODUCTS.find((x) => x.slug === l.slug);
+    const pk = p && !p.outOfStock && (p.sizes || []).find((z) => z.label === PACK3);
+    if (!pk || (p.stock != null && p.stock < 3)) return '';
+    const save = l.unit * 3 - pk.price;
+    if (save <= 0) return '';
+    const ship = country().shipping;
+    const newSub = s.subtotal - l.subtotal + pk.price;
+    const unlocks = s.subtotal < ship.freeThreshold && newSub >= ship.freeThreshold;
+    return `<button type="button" class="ci-pack" data-act="pack3" data-id="${l.id}">
+      <span>${T('Switch to the 3-vial pack: <b>{p}</b> ({v} per vial)', { p: money(pk.price), v: money(pk.price / 3) })}</span>
+      <em>${T('{n} less than 3 single vials', { n: money(save) })}${unlocks ? ' · ' + T('and shipping is free') : ''}</em>
+    </button>`;
+  }
+
+  function itemRow(l, s) {
     return `
       <div class="ci-row">
         <a class="ci-thumb" href="${U('product/' + l.slug + '/')}">${l.photo ? `<img class="product-photo" src="${l.photo}" alt="${l.name}" width="1400" height="933" loading="lazy">` : ui.vial(l.name, l.size)}</a>
@@ -137,6 +158,7 @@
               ${l.qty > 1 ? `<span>${money(l.unit)} ${T('each')}</span>` : ''}
             </div>
           </div>
+          ${packOffer(l, s)}
         </div>
       </div>`;
   }
@@ -425,7 +447,7 @@
         <div class="cartpage-grid">
           <div class="cartpage-main">
             ${shipProgress(s.subtotal)}
-            <div class="cartpage-items">${s.lines.map(itemRow).join('')}</div>
+            <div class="cartpage-items">${s.lines.map((l) => itemRow(l, s)).join('')}</div>
             <a class="cartpage-continue" href="${U('catalog/')}">← ${T('Continue shopping')}</a>
           </div>
           ${summary(s)}
@@ -457,6 +479,7 @@
         if (act === 'inc') cart.setQty(id, line.qty + 1);
         if (act === 'dec') cart.setQty(id, line.qty - 1);
         if (act === 'rm') cart.remove(id);
+        if (act === 'pack3') { cart.remove(id); cart.add(line.slug, PACK3, 1); }
       });
     }
 

@@ -1114,6 +1114,11 @@ s.was, .pd-price-was {
 .ci-rm:hover { color: var(--danger); }
 .ci-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 1rem; }
 .ci-price { text-align: right; }
+.ci-pack { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .25rem .75rem;
+  width: 100%; margin-top: .75rem; padding: .6rem .8rem; border: 1px dashed var(--border); border-radius: 10px;
+  background: transparent; font: inherit; font-size: .85rem; text-align: left; color: var(--ink); cursor: pointer; }
+.ci-pack:hover { border-style: solid; border-color: var(--ink); }
+.ci-pack em { font-style: normal; color: #1f7a55; font-weight: 600; white-space: nowrap; }
 .ci-price b { font-size: 1.05rem; }
 .ci-price span { display: block; font-size: .76rem; color: var(--muted); }
 .cartpage-continue { display: inline-block; margin-top: 1.3rem; font-weight: 600; font-size: .9rem; color: var(--accent); }
@@ -1491,6 +1496,7 @@ s.was, .pd-price-was {
   .hero { padding-top: 2.5rem; }
   .marquee { display: none; }
   .announce .ann-contact { display: none; }
+  .announce .ann-ruo { display: none; }
   /* Chips del hero: debajo de la tarjeta, en fila, sin tapar la etiqueta del vial. */
   .hero-visual { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; min-height: 0; }
   .hero-visual .vial-card { flex-basis: 100%; }

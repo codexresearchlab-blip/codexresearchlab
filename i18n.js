@@ -318,6 +318,7 @@
     'for 10% off': 'y llévate 10% off',
     'Code': 'El código',
     'applied': 'aplicado',
+    'not valid on packs': 'no aplica a los packs',
     'is not valid.': 'no es válido.',
     'Remove code': 'Quitar código',
     'registered · the': 'registrado · el',

@@ -364,7 +364,8 @@
     "WELCOME10": {
       "type": "percent",
       "value": 10,
-      "label": "10% off"
+      "label": "10% off",
+      "packs": false
     },
     "FREESHIP": {
       "type": "freeship",

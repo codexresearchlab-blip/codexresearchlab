@@ -511,7 +511,10 @@ const MANUAL_PAY = {
 };
 
 const COUPONS = {
-  WELCOME10: { type: 'percent', value: 10, label: '10% off' },
+  // packs: false → el % sólo se aplica a viales sueltos (los packs ya llevan
+  // su descuento; sin esto un pack de 10 + WELCOME10 quedaba en 32,5%).
+  // Lo lee también el servidor: va en prices.json (quote-lib.php).
+  WELCOME10: { type: 'percent', value: 10, label: '10% off', packs: false },
   FREESHIP: { type: 'freeship', label: 'Free shipping' },
 };
 

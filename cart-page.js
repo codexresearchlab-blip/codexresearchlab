@@ -76,13 +76,18 @@
     let discount = 0;
     // Los descuentos NO se combinan: mientras la rebaja general esté activa,
     // los precios ya vienen rebajados y un código no aplica nada encima.
-    if (c && c.type === 'percent' && !SALE.active) discount = subtotal * (c.value / 100);
+    // Con packs: false el cupón ignora las líneas de pack («Pack · N vials»).
+    // Réplica de quote_order() en quote-lib.php: cambiar los dos a la vez.
+    const isPack = (l) => /^pack\b/i.test(l.size);
+    const base = c && c.packs === false ? lines.filter((l) => !isPack(l)).reduce((n, l) => n + l.subtotal, 0) : subtotal;
+    const packsExcluded = !!(c && c.packs === false && lines.some(isPack));
+    if (c && c.type === 'percent' && !SALE.active) discount = base * (c.value / 100);
     const freeByThreshold = subtotal >= ship.freeThreshold;
     const freeByCoupon = !!(c && c.type === 'freeship');
     const freeShip = subtotal > 0 && (freeByThreshold || freeByCoupon);
     const shipping = subtotal === 0 ? 0 : (freeShip ? 0 : ship.flat);
     const total = Math.max(0, subtotal - discount + shipping);
-    return { lines, subtotal, discount, shipping, freeShip, total, coupon: c };
+    return { lines, subtotal, discount, shipping, freeShip, total, coupon: c, packsExcluded, hasSingles: lines.some((l) => !isPack(l)) };
   }
 
   // ---------- Sub-vistas ----------
@@ -303,7 +308,7 @@
       ? (validCoupon(coupon)
           ? (SALE.active && COUPONS[coupon].type === 'percent'
               ? `<div class="coupon-msg ok">${T('Code')} <b>${esc(coupon)}</b> ${T('registered · the')} <b>${SALE.percent}% OFF</b> ${T('already applied is a better deal, and discounts don’t stack')} <button data-coupon-remove aria-label="${T('Remove code')}">✕</button></div>`
-              : `<div class="coupon-msg ok">${T('Code')} <b>${esc(coupon)}</b> ${T('applied')} · ${esc(T(COUPONS[coupon].label))} <button data-coupon-remove aria-label="${T('Remove code')}">✕</button></div>`)
+              : `<div class="coupon-msg ok">${T('Code')} <b>${esc(coupon)}</b> ${T('applied')} · ${esc(T(COUPONS[coupon].label))}${s.packsExcluded ? ' · ' + T('not valid on packs') : ''} <button data-coupon-remove aria-label="${T('Remove code')}">✕</button></div>`)
           : `<div class="coupon-msg err">${T('Code')} “${esc(coupon)}” ${T('is not valid.')}</div>`)
       : '';
 
@@ -317,7 +322,7 @@
             <button type="submit" class="btn btn-ghost">${T('Apply')}</button>
           </form>
           ${couponMsg}
-          ${!SALE.active && !(coupon && validCoupon(coupon)) ? `<button type="button" class="coupon-hint" data-apply-welcome>${T('First order? Tap to apply')} <b>WELCOME10</b> ${T('for 10% off')}</button>` : ''}
+          ${!SALE.active && s.hasSingles && !(coupon && validCoupon(coupon)) ? `<button type="button" class="coupon-hint" data-apply-welcome>${T('First order? Tap to apply')} <b>WELCOME10</b> ${T('for 10% off')}</button>` : ''}
 
           <div class="sum-rows">
             <div class="sum-row"><span>${T('Subtotal')}</span><span>${money(s.subtotal)}</span></div>

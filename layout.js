@@ -247,6 +247,14 @@
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
+  // Medición del gate: cuántos lo ven, cuántos entran y cuántos se van. Sin
+  // esto no hay forma de saber cuánto tráfico pierde (bajó el paso a ficha de
+  // 32% a 18% desde que se puso, 19-oct). Eventos propios: no tocan el embudo
+  // estándar de Meta.
+  function gateTrack(name) {
+    try { if (typeof fbq === 'function') fbq('trackCustom', name); } catch (e) { /* sin píxel */ }
+    try { if (typeof gtag === 'function') gtag('event', name.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase()); } catch (e) { /* sin GA */ }
+  }
   function closeGate() {
     try { localStorage.setItem(GATE_KEY, String(Date.now())); } catch (e) { /* modo privado */ }
     gate.hidden = true;
@@ -259,14 +267,16 @@
     paint();
     window.addEventListener('rea-country-change', paint);
     gate.hidden = false;
+    gateTrack('GateView');
     document.documentElement.classList.add('rgate-open');
     document.addEventListener('keydown', trapFocus);
     setTimeout(() => { const y = document.getElementById('rgateYes'); if (y) y.focus(); }, 60);
     gate.addEventListener('click', (e) => {
       const c = e.target.closest('.rgate-country');
       if (c) { window.REACountry.set(c.getAttribute('data-country')); return; }
-      if (e.target.closest('#rgateYes')) { closeGate(); return; }
+      if (e.target.closest('#rgateYes')) { gateTrack('GateAccept'); closeGate(); return; }
       if (e.target.closest('#rgateNo')) {
+        gateTrack('GateDecline');
         // Salida cordial: no se entra, pero se puede corregir si fue un error.
         gate.querySelector('.rgate-card').innerHTML = `
           <p class="rgate-kicker">${T('Research use only')}</p>

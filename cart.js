@@ -280,7 +280,12 @@
     if (Date.now() - g.ts < 5000) pintarAviso(g.texto);
   }
 
-  window.addEventListener('rea-country-change', () => { avisarDescartes(); render(); });
+  /* Se vuelve a leer lo guardado ANTES de nada: `items` se cargó con la tabla de
+     stock publicada, y el stock en vivo (stock.php) llega después con este mismo
+     evento. Sin releer, un producto que la foto daba en 0 y que sí hay (BPC-157
+     en Panamá, nov-2026) desaparecía del carrito al cambiar de página aunque
+     seguía guardado. load() no escribe, así que releer no pierde nada. */
+  window.addEventListener('rea-country-change', () => { items = load(); avisarDescartes(); render(); });
 
   window.REACart = { add, setQty, remove, open, close, items: () => items, detailed, count, total };
 })();

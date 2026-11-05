@@ -50,6 +50,74 @@
     });
   })();
 
+  // ---------- Video del hero del catálogo, sin cortes ----------
+  // Con `loop` el navegador rebobina a 0 al final de cada vuelta (8 s) y se
+  // queda un instante en «waiting»: se ve como pausa y arranque (2026-11-04,
+  // «que sea constante y nunca pare»). El clip ya cierra limpio (último cuadro
+  // ≈ primero), así que se usan dos <video> idénticos que se relevan: el que
+  // espera está parado en 0 con el cuadro listo y arranca justo cuando el otro
+  // llega al final. Sin JS queda el `loop` normal del HTML.
+  (function catalogHeroLoop() {
+    const a = document.querySelector('.catalog-hero-video');
+    if (!a) return;
+    const b = a.cloneNode(false);
+    b.removeAttribute('autoplay');
+    b.removeAttribute('poster');
+    b.classList.add('is-twin');
+    b.muted = true; b.playsInline = true;
+    a.loop = false; b.loop = false;
+    a.insertAdjacentElement('afterend', b);
+
+    let cur = a, next = b, handing = false;
+    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); return p; };
+    const arm = (v) => { try { v.pause(); v.currentTime = 0; } catch (e) {} };
+    arm(b);
+
+    // Relevo: arranca el otro y, cuando ya pinta, se muestra y se esconde éste.
+    function handoff() {
+      if (handing) return;
+      handing = true;
+      const from = cur, to = next;
+      const show = () => {
+        to.classList.add('is-front'); from.classList.remove('is-front');
+        cur = to; next = from; handing = false;
+        setTimeout(() => arm(from), 120);
+        watch(cur);
+      };
+      to.addEventListener('playing', show, { once: true });
+      play(to);
+    }
+
+    // Vigila el final: por cuadro cuando el navegador lo permite, si no por
+    // timeupdate; `ended` es la red de seguridad.
+    function watch(v) {
+      if (v.requestVideoFrameCallback) {
+        const tick = (now, meta) => {
+          if (v !== cur || handing) return;
+          const d = v.duration;
+          if (d && meta.mediaTime >= d - 0.09) handoff(); else v.requestVideoFrameCallback(tick);
+        };
+        v.requestVideoFrameCallback(tick);
+      }
+    }
+    [a, b].forEach((v) => {
+      v.addEventListener('timeupdate', () => {
+        if (v === cur && !handing && !v.requestVideoFrameCallback && v.duration && v.currentTime >= v.duration - 0.3) handoff();
+      });
+      v.addEventListener('ended', () => { if (v === cur) handoff(); });
+    });
+    a.classList.add('is-front');
+    watch(a);
+
+    // Nunca se queda parado: si el autoplay se bloquea (modo de bajo consumo)
+    // o el navegador lo pausa, se reanuda al volver a la pestaña o al primer toque.
+    const resume = () => { if (cur.paused && !handing) play(cur); };
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) resume(); });
+    ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach((e) =>
+      addEventListener(e, resume, { capture: true, passive: true }));
+    if (cur.paused) play(cur);
+  })();
+
   // ---------- Scroll reveal (fade-up, con stagger) ----------
   function setupReveal() {
     if (reduce || !('IntersectionObserver' in window)) return;

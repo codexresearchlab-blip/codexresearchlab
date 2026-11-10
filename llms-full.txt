@@ -6,7 +6,7 @@
 > the United States. Orders are placed on the site and paid with crypto (USDC/USDT),
 > Zelle (United States) or Yappy (Panama); Zelle and Yappy are confirmed by hand before shipping.
 
-Last updated: 2026-11-04. Machine-readable pricing: https://codexresearchlab.com/pricing.md
+Last updated: 2026-11-10. Machine-readable pricing: https://codexresearchlab.com/pricing.md
 
 All products are sold strictly for laboratory research and development. They are not for
 human or animal consumption and are not intended to diagnose, treat, cure or prevent any
@@ -29,6 +29,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - Molecular weight: 4813.45 g/mol
 - PubChem: https://pubchem.ncbi.nlm.nih.gov/compound/156588324
 - Research areas: GIP signaling, GLP-1 signaling, Glucose regulation, Metabolism
+- Independent lab test: GLP2-T (tirzepatide) 20 mg, batch CDX-1017: tested by Janoshik on Nov 10, 2026, 99.660% purity, 19.10 mg measured content, verification key BTPWYJX55835 (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-tirzepatide-20mg.webp
 - Single vial: $149.00 USD
 - Pack · 3 vials: $411.24 USD
 - Pack · 5 vials: $633.25 USD
@@ -304,6 +305,7 @@ Tesamorelin is a synthetic analog of growth hormone-releasing hormone (GHRH 1-44
 - Molecular weight: 5135.9 g/mol
 - PubChem: https://pubchem.ncbi.nlm.nih.gov/compound/16137828
 - Research areas: GHRH receptor, GH regulation, Endocrine regulation
+- Independent lab test: Tesamorelin 20 mg, batch CDX-1017: tested by Janoshik on Nov 10, 2026, 97.851% purity, 20.15 mg measured content, verification key DPLC1HX8HFRR (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-tesamorelin-20mg.webp
 - Single vial: $279.00 USD
 - Pack · 3 vials: $770.04 USD
 - Pack · 5 vials: $1185.75 USD

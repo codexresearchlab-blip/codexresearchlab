@@ -302,7 +302,7 @@
 
     <!-- COA modal -->
     <div class="coa-backdrop" id="coaBackdrop" hidden></div>
-    <div class="coa-modal" id="coaModal" role="dialog" aria-modal="true" aria-labelledby="coaTitle" hidden>
+    <div class="coa-modal${batch && batch.coa ? ' coa-modal-wide' : ''}" id="coaModal" role="dialog" aria-modal="true" aria-labelledby="coaTitle" hidden>
       <div class="coa-modal-head">
         <h3 id="coaTitle">${T('Certificate of analysis')}</h3>
         <button class="cart-close" id="coaClose" aria-label="${T('Close')}">
@@ -317,9 +317,13 @@
             <span class="mono-tag">${batch ? T('Batch') + ' ' + batch.code : p.tag} · ${p.mg}</span>
           </div>
         </div>
+        ${batch && batch.coa ? `<a class="coa-img" href="${batch.coa}" target="_blank" rel="noopener">
+          <img src="${batch.coa}" alt="${T('Certificate of analysis')} · ${p.name} · ${T('Batch')} ${batch.code}" width="1356" height="2000" fetchpriority="low" decoding="async">
+          <span>${T('View the full lab report')}</span>
+        </a>` : ''}
         <dl class="coa-rows">
           <div><dt>${T('Method')}</dt><dd>${T('HPLC + mass spectrometry')}</dd></div>
-          <div><dt>${T('Purity spec')}</dt><dd>${T('99% minimum')}</dd></div>
+          ${batch && batch.purity ? '' : `<div><dt>${T('Purity spec')}</dt><dd>${T('99% minimum')}</dd></div>`}
           ${batch && batch.purity ? `<div><dt>${T('Purity, this batch')}</dt><dd>${batch.purity}</dd></div>` : ''}
           ${batch && batch.date ? `<div><dt>${T('Analysis date')}</dt><dd>${batch.date}</dd></div>` : ''}
           ${batch && batch.content ? `<div><dt>${T('Measured content')}</dt><dd>${batch.content}</dd></div>` : ''}
@@ -327,7 +331,6 @@
           ${batch && batch.labKey ? `<div><dt>${T('Lab verification key')}</dt><dd><a href="https://www.janoshik.com/verify/" target="_blank" rel="noopener">${batch.labKey}</a></dd></div>` : ''}
           <div><dt>${T('The certificate reports')}</dt><dd>${T('Purity, identity and quantity')}</dd></div>
         </dl>
-        ${batch && batch.coa ? `<p class="coa-note"><a href="${batch.coa}" target="_blank" rel="noopener">${T('View the full lab report')}</a></p>` : ''}
         <p class="coa-note">${T('This is the batch currently in stock. Its full certificate is available on request, before you order if you want to see it first.')} <a href="verify/${batch ? '?batch=' + encodeURIComponent(batch.code) : ''}">${T('Check this batch number')}</a>.</p>
         <a class="btn btn-primary coa-cta" href="https://wa.me/${window.REA.WHATSAPP}?text=${encodeURIComponent(T('Hi, I’d like the COA for') + ' ' + p.name + (batch ? ' (' + T('batch') + ' ' + batch.code + ')' : ''))}" target="_blank" rel="noopener">${T('Ask for this batch COA')}</a>
       </div>

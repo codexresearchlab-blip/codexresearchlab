@@ -1,6 +1,6 @@
 # Pricing · Codex Research (codexresearchlab.com)
 
-All prices in USD. Last updated: 2026-11-04.
+All prices in USD. Last updated: 2026-11-10.
 Research peptides sold strictly for laboratory research and development, not for
 human or animal consumption.
 
@@ -19,7 +19,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - URL: https://codexresearchlab.com/product/tirzepatide/
 - CAS number: 2023788-19-2
 - PubChem CID: 156588324
-- Purity: 99% (HPLC), certificate of analysis per batch
+- Purity: 99.660% (Janoshik, batch CDX-1017)
 - Availability: Out of stock
 - Single vial: $149.00 USD
 - Pack · 3 vials: $411.24 USD (8% off)
@@ -29,7 +29,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 ### GLP3-R (retatrutide) · 10 mg per vial
 
 - URL: https://codexresearchlab.com/product/retatrutide/
-- Purity: 99% (HPLC), certificate of analysis per batch
+- Purity: 99.777% (Janoshik, batch CDX-1017)
 - Availability: In stock
 - Single vial: $150.00 USD
 - Pack · 3 vials: $414.00 USD (8% off)
@@ -163,7 +163,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - URL: https://codexresearchlab.com/product/tesamorelin-20mg/
 - CAS number: 218949-48-5
 - PubChem CID: 16137828
-- Purity: 99% (HPLC), certificate of analysis per batch
+- Purity: 97.851% (Janoshik, batch CDX-1017)
 - Availability: Out of stock
 - Single vial: $279.00 USD
 - Pack · 3 vials: $770.04 USD (8% off)

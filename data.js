@@ -543,6 +543,14 @@ const BATCHES = {
         purity: '99.777%', content: '10.33 mg', date: 'Oct 2, 2026', lab: 'Janoshik',
         labKey: '9UIDR6QE68DG', coa: 'assets/coa/cdx-1017-retatrutide-10mg.webp',
       },
+      tirzepatide: {
+        purity: '99.660%', content: '19.10 mg', date: 'Nov 10, 2026', lab: 'Janoshik',
+        labKey: 'BTPWYJX55835', coa: 'assets/coa/cdx-1017-tirzepatide-20mg.webp',
+      },
+      'tesamorelin-20mg': {
+        purity: '97.851%', content: '20.15 mg', date: 'Nov 10, 2026', lab: 'Janoshik',
+        labKey: 'DPLC1HX8HFRR', coa: 'assets/coa/cdx-1017-tesamorelin-20mg.webp',
+      },
     },
   },
 };

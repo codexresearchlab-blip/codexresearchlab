@@ -51,6 +51,10 @@
   // La opción que más ahorra se marca como recomendada, pero NO se preselecciona:
   // la entrada barata sigue siendo el vial suelto (compromiso pequeño primero).
   const savedValue = (s) => (refList(s) ? Math.max(0, refList(s) - s.price) : 0);
+  // Promo con fecha (`promoEnd` en data.js): la etiqueta se apaga sola al vencer,
+  // pero el PRECIO sigue hasta que se republique data.js (prices.json manda en el cobro).
+  const promoOn = (s) => s.promoEnd && new Date() <= new Date(s.promoEnd + 'T23:59:59');
+  const promoDate = (s) => new Date(s.promoEnd + 'T12:00:00').toLocaleDateString(esPage ? 'es' : 'en-US', { day: 'numeric', month: 'short' });
   const bestIdx = p.sizes.reduce((best, s, i) => (savedValue(s) > savedValue(p.sizes[best]) ? i : best), 0);
   // Sugerencias: con stock, sin otros tamaños del mismo compuesto y una por nombre.
   const relSeen = new Set([p.name]);
@@ -182,7 +186,7 @@
             <label>${T('Pack')}</label>
             <div class="pd-options pd-packs" id="pdSizes">
               ${p.sizes.map((s, i) => `<button class="pd-opt ${i === 0 ? 'active' : ''}${i === bestIdx && savedValue(s) > 0 ? ' pd-opt-best' : ''}" data-size="${s.label}" data-price="${s.price}">
-                ${i === bestIdx && savedValue(s) > 0 ? `<span class="pd-opt-flag">${T('Best value')}</span>` : ''}
+                ${promoOn(s) ? `<span class="pd-opt-flag">${T('Offer until {d}', { d: promoDate(s) })}</span>` : (i === bestIdx && savedValue(s) > 0 ? `<span class="pd-opt-flag">${T('Best value')}</span>` : '')}
                 <span class="pd-opt-label">${T(s.label)}</span>
                 <span class="pd-opt-price">${money(s.price)}${refList(s) ? ` <s class="was">${money(refList(s))}</s>` : ''}</span>
                 ${perVial(s) ? `<span class="pd-opt-unit">${perVial(s)}</span>` : ''}

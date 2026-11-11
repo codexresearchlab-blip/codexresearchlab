@@ -122,6 +122,7 @@
     'per vial': 'por vial',
     '{n} per vial': '{n} por vial',
     'Save {n}': 'Ahorra {n}',
+    'Offer until {d}': 'Oferta hasta el {d}',
     'Pack': 'Presentación',
     'Quantity': 'Cantidad',
     'Decrease': 'Restar',

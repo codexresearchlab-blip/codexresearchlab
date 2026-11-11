@@ -551,6 +551,10 @@ const BATCHES = {
         purity: '97.851%', content: '20.15 mg', date: 'Nov 10, 2026', lab: 'Janoshik',
         labKey: 'DPLC1HX8HFRR', coa: 'assets/coa/cdx-1017-tesamorelin-20mg.webp',
       },
+      'bpc-157': {
+        purity: '99.833%', content: '11.74 mg', date: 'Nov 11, 2026', lab: 'Janoshik',
+        labKey: 'DETSERG74515', coa: 'assets/coa/cdx-1017-bpc-157-10mg.webp',
+      },
     },
   },
 };

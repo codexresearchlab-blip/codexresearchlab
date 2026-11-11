@@ -1,6 +1,6 @@
 # Pricing · Codex Research (codexresearchlab.com)
 
-All prices in USD. Last updated: 2026-11-10.
+All prices in USD. Last updated: 2026-11-11.
 Research peptides sold strictly for laboratory research and development, not for
 human or animal consumption.
 
@@ -61,7 +61,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - URL: https://codexresearchlab.com/product/bpc-157/
 - CAS number: 137525-51-0
 - PubChem CID: 9941957
-- Purity: 99% (HPLC), certificate of analysis per batch
+- Purity: 99.833% (Janoshik, batch CDX-1017)
 - Availability: In stock
 - Single vial: $79.00 USD
 - Pack · 3 vials: $218.04 USD (8% off)

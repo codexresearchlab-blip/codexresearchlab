@@ -60,6 +60,7 @@ Every peptide batch ships with its certificate of analysis (HPLC and mass spectr
 - Independent lab results published so far:
   - GLP2-T (tirzepatide) 20 mg, batch CDX-1017: tested by Janoshik on Nov 10, 2026, 99.660% purity, 19.10 mg measured content, verification key BTPWYJX55835 (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-tirzepatide-20mg.webp
   - GLP3-R (retatrutide) 10 mg, batch CDX-1017: tested by Janoshik on Oct 2, 2026, 99.777% purity, 10.33 mg measured content, verification key 9UIDR6QE68DG (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-retatrutide-10mg.webp
+  - BPC-157 10 mg, batch CDX-1017: tested by Janoshik on Nov 11, 2026, 99.833% purity, 11.74 mg measured content, verification key DETSERG74515 (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-bpc-157-10mg.webp
   - Tesamorelin 20 mg, batch CDX-1017: tested by Janoshik on Nov 10, 2026, 97.851% purity, 20.15 mg measured content, verification key DPLC1HX8HFRR (check it at https://janoshik.com/verify/). COA: https://codexresearchlab.com/assets/coa/cdx-1017-tesamorelin-20mg.webp
 
 ## Key pages

@@ -11,7 +11,9 @@
   const main = document.getElementById('productMain');
 
   const money = (n) => '$' + n.toFixed(2);
-  const oos = !!p.outOfStock;
+  // `let`: cambia en vivo cuando llega el stock de stock.php o se cambia de país
+  // (ver paintStock al final).
+  let oos = !!p.outOfStock;
   // Video de producto: en bucle y sin sonido, como un GIF, y siempre en
   // automático (decisión del dueño, también con "reducir movimiento").
   const videoTag = () => `<video class="pd-video" src="${p.video}" poster="${p.videoPoster}" width="864" height="1080"
@@ -460,15 +462,29 @@
   setEta();
   window.addEventListener('rea-country-change', setEta);
 
-  /* La ficha lee el estado agotado y el tope de unidades una sola vez, al
-     pintarse. Si al cambiar de país ese estado cambia —hay bodegas donde el
-     producto no está— la página entera queda mintiendo: botón activo, tope de
-     cantidad viejo. Repintar pieza por pieza sería fácil de olvidar al tocar
-     la ficha, así que se recarga, y solo cuando de verdad cambió. */
-  window.addEventListener('rea-country-change', () => {
-    const ahora = !!p.outOfStock;
-    if (ahora !== oos) location.reload();
-  });
+  /* Estado agotado en vivo. Cambia al elegir otro país (hay bodegas donde el
+     producto no está) y también en CADA carga, cuando stock.php contesta con un
+     conteo distinto al publicado en data.js.
+
+     Antes esto hacía location.reload(): como la recarga vuelve a pintar con la
+     tabla publicada, la ficha salía «Agotado», se recargaba y, con red lenta,
+     podía entrar en bucle (bug del 2026-11-15 con tirzepatida en Panamá).
+     Nunca recargar aquí. Si se agrega a la ficha algo más que dependa de
+     `oos`, se actualiza en esta función. El tope de cantidad (maxQty) ya lee
+     p.stock al vuelo; aquí solo se recorta la cantidad elegida. */
+  function paintStock() {
+    oos = !!p.outOfStock;
+    [['pdAdd', 'Add to cart'], ['pdStickyAdd', 'Add']].forEach(([id, label]) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.disabled = oos;
+      b.textContent = oos ? T('Out of stock') : T(label);
+    });
+    const tope = Math.min(qty, maxQty());
+    if (tope !== qty) { qty = tope; qtyValEl.textContent = qty; refreshPrice(); }
+    else refreshShipHint();
+  }
+  window.addEventListener('rea-country-change', paintStock);
 
   // Barra fija: aparece cuando el botón principal sale de vista (móvil)
   const mainAddBtn = document.getElementById('pdAdd');

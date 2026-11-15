@@ -6,7 +6,7 @@
 > the United States. Orders are placed on the site and paid with crypto (USDC/USDT),
 > Zelle (United States) or Yappy (Panama); Zelle and Yappy are confirmed by hand before shipping.
 
-Last updated: 2026-11-11. Machine-readable pricing: https://codexresearchlab.com/pricing.md
+Last updated: 2026-11-15. Machine-readable pricing: https://codexresearchlab.com/pricing.md
 
 All products are sold strictly for laboratory research and development. They are not for
 human or animal consumption and are not intended to diagnose, treat, cure or prevent any
@@ -39,7 +39,7 @@ A dual GIP and GLP-1 receptor agonist studied in models of metabolic signaling, 
 
 **What is GLP2-T?** A dual GIP and GLP-1 receptor agonist studied in models of metabolic signaling, glucose regulation and energy balance. It is supplied as a lyophilized 20 mg vial for laboratory research use only.
 
-**How much does GLP2-T cost?** Single vial: $149.00 USD. Pack · 3 vials: $411.24 USD. Pack · 5 vials: $633.25 USD. Pack · 10 vials: $1043.00 USD. Prices are in USD. This presentation is currently out of stock.
+**How much does GLP2-T cost?** Single vial: $149.00 USD. Pack · 3 vials: $411.24 USD. Pack · 5 vials: $633.25 USD. Pack · 10 vials: $1043.00 USD. Prices are in USD.
 
 **Is GLP2-T tested, and do you provide a certificate of analysis?** Yes. Every batch is tested at 99% purity by HPLC and mass spectrometry. The certificate of analysis is available on request, before you order if you want to see it first, and any vial's batch number can be checked at https://codexresearchlab.com/verify/.
 

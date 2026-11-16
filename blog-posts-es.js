@@ -237,6 +237,16 @@
         <h2>Quién lo firma, y por qué importa</h2>
         <p>Un certificado es una afirmación de quien lo emite, así que el análisis independiente importa porque separa a quien hace la afirmación de quien vende el material. Los laboratorios que trabajan bajo una norma de competencia reconocida se evalúan contra criterios definidos de competencia e imparcialidad, y la acreditación cubre una lista específica de métodos, no los análisis en general. El número dice una cosa. Quién lo produjo, y con qué método, es una pregunta aparte.</p>
 
+        <h2>Un ejemplo resuelto: el certificado de BPC-157 del lote CDX-1017</h2>
+        <p>Este es uno de los nuestros, leído como propone este artículo. La etiqueta del vial dice BPC-157, 10 mg, lote CDX-1017. El certificado lo emitió Janoshik, un laboratorio independiente, el 11 de noviembre de 2026.</p>
+        <ul>
+          <li><b>Lote:</b> CDX-1017 en el certificado y CDX-1017 en el vial. El documento describe el material que tienes en la mano, que es lo primero que hay que confirmar.</li>
+          <li><b>Pureza:</b> 99,833 % por área de HPLC. Es la parte de los picos detectados que corresponde al péptido buscado, no la parte del polvo que es péptido.</li>
+          <li><b>Contenido medido:</b> 11,74 mg frente a una etiqueta de 10 mg. El vial trae más péptido del que declara. Lo contrario, un vial por debajo de su etiqueta, es el resultado que debería preocupar.</li>
+          <li><b>Quién lo firma:</b> el certificado lleva una clave, DETSERG74515, que se puede escribir en la página de verificación del propio laboratorio. Si el registro del laboratorio muestra las mismas cifras, el documento no se editó después de salir de allí.</li>
+        </ul>
+        <p>Todos los resultados publicados de este lote, con su clave y la imagen del certificado, están en nuestra <a href="es/verify/">página de verificación de lotes</a>. Los compuestos sin fila ahí todavía no tienen análisis de este lote, y lo decimos en vez de reutilizar el certificado de otro producto.</p>
+
         <h2>Señales de alarma en un certificado</h2>
         <ul>
           <li><b>Sin número de lote,</b> o con uno que no coincide con el vial: el documento describe el material de otro.</li>

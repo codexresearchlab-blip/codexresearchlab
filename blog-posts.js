@@ -705,6 +705,16 @@
         <h2>Who signs it, and why that matters</h2>
         <p>A certificate is a claim by whoever issued it, so independent testing matters because it separates the party making the claim from the party selling the material. Laboratories working to a recognised competence standard are assessed against defined criteria for competence and impartiality, and accreditation covers a specific list of methods, not testing in general. The useful question is who produced the number, and under which method.</p>
 
+        <h2>A worked example: the BPC-157 certificate for batch CDX-1017</h2>
+        <p>Here is one of ours, read the way this article suggests. The vial label says BPC-157, 10 mg, batch CDX-1017. The certificate was issued by Janoshik, an independent laboratory, on November 11, 2026.</p>
+        <ul>
+          <li><b>Batch:</b> CDX-1017 on the certificate, CDX-1017 on the vial. The document describes the material in hand, which is the first thing to settle.</li>
+          <li><b>Purity:</b> 99.833 percent by HPLC area. That is the share of the detected peaks that belongs to the target peptide, not the share of the powder that is peptide.</li>
+          <li><b>Measured content:</b> 11.74 mg against a 10 mg label. The vial holds more peptide than it states. The opposite, a vial that comes in under its label, is the result that should worry you.</li>
+          <li><b>Who signed it:</b> the certificate carries a key, DETSERG74515, that can be entered on the lab's own verification page. If the lab's record shows the same numbers, the document was not edited after it left the lab.</li>
+        </ul>
+        <p>Every published result for this batch, with its key and the certificate image, is on our <a href="verify/">batch verification page</a>. The compounds without a row there have not been tested on this batch yet. We say so, and we do not borrow another product's certificate to fill the gap.</p>
+
         <h2>Red flags on a certificate</h2>
         <ul>
           <li><b>No batch or lot number,</b> or one that does not match the vial: the document describes someone else's material.</li>

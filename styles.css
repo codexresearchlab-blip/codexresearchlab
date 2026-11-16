@@ -1883,7 +1883,8 @@ a, button, input, select, textarea, label, summary,
    El blog no usaba <table> hasta ahora, así que no había ningún estilo: sin
    esto salen con el aspecto por defecto del navegador. Se desbordan en su
    propio contenedor para que el móvil no arrastre la página entera. */
-.article-body table {
+.article-body table,
+.lab-results table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.4rem 0;
@@ -1893,20 +1894,24 @@ a, button, input, select, textarea, label, summary,
   white-space: nowrap;
 }
 .article-body table th,
-.article-body table td {
+.article-body table td,
+.lab-results table th,
+.lab-results table td {
   border-bottom: 1px solid rgba(120,130,140,.22);
   padding: .5rem .8rem;
   text-align: left;
   vertical-align: top;
 }
-.article-body table th {
+.article-body table th,
+.lab-results table th {
   font-weight: 600;
   background: var(--bg-soft);
   white-space: nowrap;
 }
-.article-body table tr:last-child td { border-bottom: 0; }
+.article-body table tr:last-child td,
+.lab-results table tr:last-child td { border-bottom: 0; }
 @media (min-width: 720px) {
-  .article-body table { display: table; white-space: normal; }
+  .article-body table, .lab-results table { display: table; white-space: normal; }
 }
 
 /* ---------- Herramientas (/tools/) ----------

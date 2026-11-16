@@ -33,7 +33,7 @@
     },
     "retatrutide-30mg": {
       "name": "GLP3-R",
-      "outOfStock": true,
+      "outOfStock": false,
       "sizes": {
         "Single vial": 214,
         "Pack · 3 vials": 590.64,
@@ -130,7 +130,7 @@
     },
     "tesamorelin-20mg": {
       "name": "Tesamorelin",
-      "outOfStock": true,
+      "outOfStock": false,
       "sizes": {
         "Single vial": 279,
         "Pack · 3 vials": 770.04,
@@ -190,7 +190,7 @@
     },
     "kisspeptin": {
       "name": "Kisspeptin-10",
-      "outOfStock": true,
+      "outOfStock": false,
       "sizes": {
         "Single vial": 94,
         "Pack · 3 vials": 259.44,

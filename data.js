@@ -55,7 +55,7 @@ const PRODUCTS = [
   {
     slug: 'retatrutide-30mg', name: 'GLP3-R', alias: 'retatrutide', nameEs: 'Retatrutide', altEs: ['Retatrutida', 'GLP3-R'], cas: '', tag: 'Research use only',
     mg: '30 mg', from: 214, formula: 'C221H342N46O68', weight: '4731.4 g/mol', pubchem: 'N/A',
-    photo: 'assets/products/retatrutide-30mg.jpg', outOfStock: true,
+    photo: 'assets/products/retatrutide-30mg.jpg',
     photo2: 'assets/products/retatrutide-30mg-2.jpg',
     video: 'assets/products/retatrutide-30mg.mp4', videoPoster: 'assets/products/retatrutide-30mg-video.jpg',
     sizes: [
@@ -212,7 +212,7 @@ const PRODUCTS = [
   {
     slug: 'tesamorelin-20mg', name: 'Tesamorelin', nameEs: 'Tesamorelina', cas: '218949-48-5', tag: 'CAS # 218949-48-5',
     mg: '20 mg', from: 279, formula: 'C221H366N72O67S', weight: '5135.9 g/mol', pubchem: '16137828',
-    photo: 'assets/products/tesamorelin-20mg.jpg', outOfStock: true,
+    photo: 'assets/products/tesamorelin-20mg.jpg',
     photo2: 'assets/products/tesamorelin-20mg-2.jpg',
     video: 'assets/products/tesamorelin-20mg.mp4', videoPoster: 'assets/products/tesamorelin-20mg-video.jpg',
     sizes: [
@@ -312,7 +312,7 @@ const PRODUCTS = [
   {
     slug: 'kisspeptin', name: 'Kisspeptin-10', nameEs: 'Kisspeptina-10', cas: '374675-21-5', tag: 'CAS # 374675-21-5',
     mg: '10 mg', from: 94, formula: 'C63H83N17O14', weight: '1302.4 g/mol', pubchem: 'N/A',
-    photo: 'assets/products/kisspeptin.jpg', outOfStock: true,
+    photo: 'assets/products/kisspeptin.jpg',
     photo2: 'assets/products/kisspeptin-2.jpg',
     video: 'assets/products/kisspeptin.mp4', videoPoster: 'assets/products/kisspeptin-video.jpg',
     sizes: [
@@ -393,7 +393,7 @@ const FAQS_ES = [
 // ahí. Con cero, el producto queda agotado para ese país.
 const STOCK_BY_COUNTRY = {
   PA: { 'ahk-cu': 1, 'bac-water': 5, 'bac-water-10ml': 59, 'bpc-157': 0, 'ghk-cu': 21, 'ipamorelin': 11, 'mots-c': 13, 'nad-plus': 9, 'pt-141': 19, 'retatrutide': 5, 'tb-500': 17, 'tirzepatide': 0 },
-  US: { 'ahk-cu': 0, 'bac-water': 140, 'bac-water-10ml': 0, 'bpc-157': 20, 'ghk-cu': 30, 'ipamorelin': 0, 'mots-c': 30, 'nad-plus': 0, 'pt-141': 0, 'retatrutide': 80, 'retatrutide-30mg': 0, 'tb-500': 0, 'tirzepatide': 0 },
+  US: { 'ahk-cu': 0, 'bac-water': 140, 'bac-water-10ml': 0, 'bpc-157': 20, 'ghk-cu': 30, 'ipamorelin': 0, 'mots-c': 30, 'nad-plus': 0, 'pt-141': 0, 'retatrutide': 80, 'tb-500': 0, 'tirzepatide': 0 },
 };
 
 // Lo que el inventario todavía no controla sigue como antes, con 25: un

@@ -50,7 +50,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 
 - URL: https://codexresearchlab.com/product/retatrutide-30mg/
 - Purity: 99% (HPLC), certificate of analysis per batch
-- Availability: Out of stock
+- Availability: In stock
 - Single vial: $214.00 USD
 - Pack · 3 vials: $590.64 USD (8% off)
 - Pack · 5 vials: $909.50 USD (15% off)
@@ -164,7 +164,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - CAS number: 218949-48-5
 - PubChem CID: 16137828
 - Purity: 97.851% (Janoshik, batch CDX-1017)
-- Availability: Out of stock
+- Availability: In stock
 - Single vial: $279.00 USD
 - Pack · 3 vials: $770.04 USD (8% off)
 - Pack · 5 vials: $1185.75 USD (15% off)
@@ -229,7 +229,7 @@ Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or cryp
 - URL: https://codexresearchlab.com/product/kisspeptin/
 - CAS number: 374675-21-5
 - Purity: 99% (HPLC), certificate of analysis per batch
-- Availability: Out of stock
+- Availability: In stock
 - Single vial: $94.00 USD
 - Pack · 3 vials: $259.44 USD (8% off)
 - Pack · 5 vials: $399.50 USD (15% off)

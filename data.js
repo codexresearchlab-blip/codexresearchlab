@@ -807,6 +807,9 @@ const FICHA_ES = {
       'esa es la de la tirzepatida, no la de retatrutide. Las impurezas típicas son secuencias con un ' +
       'aminoácido de menos y el péptido sin la cadena lipídica, que pesa unos 598 menos, así que la pureza ' +
       'por HPLC importa tanto como la masa.',
+    // Tabla de precio por presentación, pack y mg en vez de la lista de presentaciones:
+    // «retatrutide precio» es su consulta con volumen en Panamá (posición 16, 18-nov-2026).
+    priceTable: true,
     // Sin `lit` ni `refs` a propósito: la única referencia verificada (Coskun 2022) lleva
     // «weight loss» en el título, y en una ficha que vende GLP3-R eso insinúa uso humano.
     lit: '',
@@ -1257,6 +1260,34 @@ const FICHA_ES = {
   },
 };
 
+/* Precio por miligramo de cada presentación y pack (viales del nombre del pack, como
+   lo leen la bodega y el servidor). Lo usan la tabla de precios y el FAQ. */
+const vialsOf = (z) => { const m = /(\d+)\s*vials/.exec(z.label); return m ? +m[1] : 1; };
+const perMg = (x, z) => z.price / (parseFloat(x.mg) * vialsOf(z));
+const usd = (n) => `$${n.toFixed(2)}`;
+
+function priceTableEs(p, n) {
+  const pres = PRODUCTS.filter((x) => x.name === p.name);
+  const labels = pres[0].sizes.map((z) => z.label);
+  const cells = pres.flatMap((x) => x.sizes.map((z) => ({ x, z, mg: perMg(x, z) })));
+  const lo = cells.reduce((a, b) => (b.mg < a.mg ? b : a));
+  const single = cells.find((c) => c.x.slug === p.slug && vialsOf(c.z) === 1);
+  const packEs = (z) => `pack de ${vialsOf(z)} viales`;
+  const saves = pres[0].sizes.filter((z) => z.save)
+    .map((z) => `${z.save} en el ${packEs(z)}`);
+  const agotadas = pres.filter((x) => x.outOfStock).map((x) => `${n} ${x.mg}`);
+  return `<h2>Precio de ${n} en Panamá</h2>
+<p>El precio de ${n} depende de la concentración del vial y de cuántos viales se piden juntos. El vial
+individual de ${p.mg} cuesta ${usd(single.z.price)}, ${usd(single.mg)} por miligramo. Lo más barato por
+miligramo es el ${packEs(lo.z)} de ${lo.x.mg}, a ${usd(lo.mg)} por mg.</p>
+<div class="pd-pricetable"><table>
+<thead><tr><th>Presentación</th>${labels.map((l) => `<th>${SIZE_ES[l] || l}</th>`).join('')}</tr></thead>
+<tbody>${pres.map((x) => `<tr><td><a href="es/product/${x.slug}/">${n} ${x.mg}</a>${x.outOfStock ? ' (agotado)' : ''}</td>${x.sizes.map((z) => `<td>${usd(z.price)}<br><small>${usd(perMg(x, z))}/mg</small></td>`).join('')}</tr>`).join('')}</tbody>
+</table></div>
+<p>Los packs llevan descuento sobre el precio del vial: ${saves.join(', ')}. Los precios están en
+dólares y son los mismos en todo Panamá; el envío cuesta $4 y es gratis en pedidos sobre $100.${agotadas.length ? ` ${agotadas.join(' y ')} está agotado por ahora.` : ''}</p>`;
+}
+
 function fichaExtraEs(p) {
   const f = FICHA_ES[p.slug];
   if (!f) return '';
@@ -1295,8 +1326,8 @@ function fichaExtraEs(p) {
 <li>La pureza por HPLC aparece como porcentaje del pico principal. Nuestra especificación de compra es de 99 % o más.</li>
 </ol>
 <p>La lista completa de lo que debe traer un certificado está en el <a href="es/tools/coa-checklist/">checklist del COA</a>.</p>
-<h2>Presentaciones de ${n} en Panamá</h2>
-<ul>${pres.map((x) => `<li><a href="es/product/${x.slug}/">${n} ${x.mg}</a>: ${x.sizes.map((z) => `${SIZE_ES[z.label] || z.label} $${z.price.toFixed(2)}`).join(', ')}${x.outOfStock ? '. Agotado por ahora' : ''}.</li>`).join('')}</ul>
+${f.priceTable ? priceTableEs(p, n) : `<h2>Presentaciones de ${n} en Panamá</h2>
+<ul>${pres.map((x) => `<li><a href="es/product/${x.slug}/">${n} ${x.mg}</a>: ${x.sizes.map((z) => `${SIZE_ES[z.label] || z.label} $${z.price.toFixed(2)}`).join(', ')}${x.outOfStock ? '. Agotado por ahora' : ''}.</li>`).join('')}</ul>`}
 ${f.lit ? `<h2>${n} en la literatura científica</h2>
 <p>${f.lit}</p>
 <ol class="pd-refs">${f.refs.map(([t, u]) => `<li>${t} <a href="${u}" rel="nofollow noopener" target="_blank">Ver publicación</a></li>`).join('')}</ol>` : ''}`;
@@ -1414,7 +1445,12 @@ function productFaqEs(p) {
       a: `${p.overviewEs || p.overview} Se suministra como vial liofilizado de ${p.mg}, solo para uso en investigación de laboratorio.` +
          (alt.length ? ` También se escribe ${alt.join(' o ')}.` : '') },
     { q: `¿Cuánto cuesta ${name} en Panamá?`,
-      a: `${list}. Precios en dólares${p.outOfStock ? '. Esta presentación está agotada por ahora' : ''}.` },
+      a: `${list}. Precios en dólares${p.outOfStock ? '. Esta presentación está agotada por ahora' : ''}.` +
+         (FICHA_ES[p.slug] && FICHA_ES[p.slug].priceTable
+           ? ` Por miligramo, el vial individual sale a ${usd(perMg(p, p.sizes[0]))} y el ` +
+             `pack de ${vialsOf(p.sizes[p.sizes.length - 1])} viales a ` +
+             `${usd(perMg(p, p.sizes[p.sizes.length - 1]))}.`
+           : '') },
     where,
     { q: `¿${name} tiene análisis de laboratorio? ¿Entregan certificado?`,
       a: 'Sí. Cada lote se analiza al 99% de pureza por HPLC y espectrometría de masas. El certificado de ' +

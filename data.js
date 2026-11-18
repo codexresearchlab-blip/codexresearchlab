@@ -614,15 +614,23 @@ péptidos de investigación en Panamá</a>.</p>`;
 /* EE. UU. en las fichas en inglés (SEO EE. UU., 2026-11-04). Tres estados según la
    bodega de EE. UU.: 'us' si hay stock declarado allá, 'pa' si la tabla dice 0 (solo
    sale de Panamá) y '' si el producto no está en la tabla (no se sabe: se deja el texto
-   de siempre). Los GLP-1 no entran: la Fase 0 del análisis de EE. UU. (26-sep) los saca
-   de cualquier empuje allí, y su ficha se queda como estaba. */
-const US_SEO_SKIP = /^(retatrutide|tirzepatide)/;
+   de siempre). Los GLP-1 estuvieron fuera hasta el 2026-11-18 por la Fase 0 del análisis
+   de EE. UU.; ese día el dueño decidió seguir vendiéndolos allí y darles el mismo empuje
+   SEO que al resto, así que siguen la misma regla de stock. */
+const GLP_US = /^(retatrutide|tirzepatide)/;
 function usShipping(p) {
-  if (US_SEO_SKIP.test(p.slug)) return '';
   const n = STOCK_BY_COUNTRY.US && STOCK_BY_COUNTRY.US[p.slug];
   if (n == null) return '';
   return n > 0 ? 'us' : 'pa';
 }
+
+/* Fichas sin envío a EE. UU. (auditoría SEO 2026-11-18, C1): lo que no está en la
+   tabla de stock de EE. UU. Antes heredaban la línea genérica «U.S. in 48-72 h» en la
+   meta, el FAQ y el JSON-LD sin bodega que la respaldara. Si un producto entra a la
+   tabla de US, vuelve a ofrecerse allá solo. Los GLP-1 quedan fuera de esta regla:
+   el dueño decidió el 2026-11-18 seguir vendiéndolos en EE. UU., así que una
+   presentación GLP que no esté en la tabla conserva la línea de dos países. */
+function noUsShipping(p) { return !GLP_US.test(p.slug) && usShipping(p) === ''; }
 
 /* Bloque «Shipping and payment in the U.S.»: solo productos con stock en EE. UU. y sin
    el agua (la Fase 0 la saca del empuje en EE. UU.). Lo hornea build-seo.js y lo
@@ -1299,6 +1307,10 @@ const SHIPPING_LINE = 'Panama City: same-day delivery in 1-2 hours, $4 flat. Int
   '(David, Chitre, Colon and more): next business day via Fergunson transport. United States: ' +
   '$20 from U.S. stock, 48-72 hours. Free shipping over $100 (Panama) or $250 (U.S.). ' +
   'Always in sealed, protective packaging, with each vial labeled with its compound, strength and batch number.';
+const SHIPPING_LINE_PA = 'Panama City: same-day delivery in 1-2 hours, $4 flat. Interior cities ' +
+  '(David, Chitre, Colon and more): next business day via Fergunson transport. Free shipping over $100. ' +
+  'Always in sealed, protective packaging, with each vial labeled with its compound, strength and batch number.';
+const shippingLineFor = (p) => (noUsShipping(p) ? SHIPPING_LINE_PA : SHIPPING_LINE);
 const PAYMENT_LINE = 'Panama: Yappy or crypto (USDC or USDT on Ethereum). United States: Zelle or ' +
   'crypto. Crypto is paid on our own checkout from your wallet. With Yappy or Zelle the order is ' +
   'placed on the site and the payment details are sent afterwards (Yappy on WhatsApp, Zelle by ' +
@@ -1326,7 +1338,7 @@ function productFaq(p) {
         a: `${p.overview} It is sold in a sealed ${p.mg} container for laboratory use only.` },
       { q: `How much does ${p.name} cost?`,
         a: `${list}. Prices are in USD${p.outOfStock ? '. This presentation is currently out of stock' : ''}.` },
-      { q: `How is ${p.name} shipped and how long does delivery take?`, a: SHIPPING_LINE },
+      { q: `How is ${p.name} shipped and how long does delivery take?`, a: shippingLineFor(p) },
       { q: `How should ${p.name} be stored?`, a: 'As stated on its label. Keep the container closed when not in use.' },
       { q: `Is ${p.name} intended for human use?`,
         a: `No. ${p.name} is sold as a laboratory diluent for research and development. It is not for human ` +
@@ -1343,7 +1355,7 @@ function productFaq(p) {
       a: 'Yes. Every batch is tested at 99% purity by HPLC and mass spectrometry. The certificate of ' +
          'analysis is available on request, before you order if you want to see it first, and any ' +
          'vial\'s batch number can be checked at https://codexresearchlab.com/verify/.' },
-    { q: `How is ${p.name} shipped and how long does delivery take?`, a: SHIPPING_LINE },
+    { q: `How is ${p.name} shipped and how long does delivery take?`, a: shippingLineFor(p) },
     { q: `How should ${p.name} be stored?`,
       a: 'Lyophilized vials are kept cool and protected from light. Once in solution they are kept ' +
          'refrigerated at 2-8 degrees Celsius. Every vial label shows its storage conditions.' },
@@ -1461,5 +1473,5 @@ const AREAS = [
 
 window.REA = { PRODUCTS, RETIRED_PRODUCTS, AREAS, FAQS, FAQS_ES, BUSINESS, COUNTRIES, MANUAL_PAY, COUPONS, BATCHES, batchFor, SALE,
   STOCK_BY_COUNTRY, applyStock, setStock,
-  WHATSAPP: '50767749282', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, usShipping, usBlockEn, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
+  WHATSAPP: '50767749282', productFaq, productFaqEs, nameEs, altNamesEs, panamaBlockEs, fichaExtraEs, usShipping, noUsShipping, usBlockEn, SHIPPING_LINE, SHIPPING_LINE_ES, PAYMENT_LINE,
   faqs, overview };
